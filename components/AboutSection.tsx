@@ -6,16 +6,15 @@ export default function AboutSection() {
           {/* Left Column */}
           <div>
             <h2 className="text-4xl md:text-6xl font-medium mb-8">
-              Let's work together.
+              Let's build something cooler.
             </h2>
             <p className="text-lg text-muted leading-relaxed mb-6">
-              I'm a freelance designer and developer passionate about creating digital experiences
-              that stand out. With a focus on clean design and smooth interactions, I help brands
-              establish their presence in the digital world.
+              I like working with people who enjoy solving real problems — the kind that require thinking, not templates.
+              If you're building something in AI, market intelligence, productivity, or just want to talk systems that think — I'd love to hear from you.
             </p>
             <p className="text-lg text-muted leading-relaxed">
-              Whether you need a complete website, a web application, or just want to discuss
-              your project, I'm here to help bring your vision to life.
+              Whether it's collaboration, consulting, or a crazy idea you want to test, I usually reply faster than expected.
+              A simple email can start something surprisingly good.
             </p>
           </div>
 
@@ -25,17 +24,20 @@ export default function AboutSection() {
               <h3 className="text-sm text-muted uppercase mb-4">Contact</h3>
               <div className="space-y-2">
                 <a
-                  href="mailto:your.email@example.com"
+                  href="mailto:abhishaivardhan21@gmail.com"
                   className="block text-lg hover:text-accent transition-colors"
                 >
-                  your.email@example.com
+                  abhishaivardhan21@gmail.com
                 </a>
                 <a
-                  href="tel:+1234567890"
+                  href="tel:+918919451220"
                   className="block text-lg hover:text-accent transition-colors"
                 >
-                  +1 (234) 567-890
+                  +91 89194 51220
                 </a>
+                <p className="text-lg text-muted">
+                  Based in India 🇮🇳
+                </p>
               </div>
             </div>
 

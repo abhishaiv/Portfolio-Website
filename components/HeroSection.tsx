@@ -43,19 +43,22 @@ export default function HeroSection() {
 
         {/* Subtitle */}
         <p className="text-xl md:text-2xl lg:text-3xl text-muted mb-8">
-          Freelance Designer & Developer
+          AI Builder + Market Intelligence Specialist
         </p>
 
         {/* Description */}
         <div className="max-w-2xl">
           <p className="text-base md:text-lg text-muted leading-relaxed mb-4">
-            I help <span className="text-foreground">brands</span> to stand out in the digital era.
-            Together we will set the new status quo. No nonsense, always on the cutting edge.
+            Building <span className="text-foreground">AI-fuelled systems</span> that upgrade humans — from 1 to 10x.
+            Currently based in India, working on systems that think.
+          </p>
+          <p className="text-base md:text-lg text-muted leading-relaxed mb-4">
+            By day, I decode global markets at <span className="text-foreground">Cognizant</span>.
+            By night, I build <span className="text-foreground">AI products</span> that remove friction, amplify humans,
+            and quietly push the world forward in micro-percentages.
           </p>
           <p className="text-base md:text-lg text-muted leading-relaxed">
-            My passion is to <span className="text-foreground">design & develop</span> digital
-            experiences with a focus on{' '}
-            <span className="text-foreground">design, code & interaction</span>.
+            <span className="text-foreground">Founder energy</span> — loading in the background. ⚡
           </p>
         </div>
 

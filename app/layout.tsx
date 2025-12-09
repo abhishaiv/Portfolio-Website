@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Abhishai Vardhan | Freelance Designer & Developer",
-  description: "Freelance designer and developer helping brands stand out in the digital era. Specializing in design, code & interaction.",
+  title: "Abhishai Vardhan | AI Builder + Market Intelligence Specialist",
+  description: "Building AI-fuelled systems that upgrade humans. Market Intelligence at Cognizant by day, AI product builder by night. Creator of Tailr AI, Recall, F1 Pitwall, and Kathy.",
 };
 
 export default function RootLayout({

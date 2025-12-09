@@ -3,41 +3,41 @@
 import ProjectCard from './ProjectCard';
 import { Project } from '@/types';
 
-// Sample projects - these will be replaced with your real projects
+// AI Products & Projects
 const projects: Project[] = [
   {
     id: '1',
-    title: 'Project One',
-    description: 'Design & Development',
+    title: 'Tailr AI',
+    description: 'Resume optimiser that beats ATS filters without inventing facts. Drop your resume + job link → Get tailored resume in under 30 seconds. Turning a 2-hour application into a 2-minute workflow.',
     image: '',
-    technologies: ['Next.js', 'TypeScript', 'Tailwind'],
+    technologies: ['AI', 'Gemini', 'Product Design', 'Automation'],
     liveUrl: '#',
     githubUrl: '#',
   },
   {
     id: '2',
-    title: 'Project Two',
-    description: 'Interaction & Development',
+    title: 'Recall',
+    description: 'AI Study Assistant living inside WhatsApp & Telegram. Save lectures, PDFs, links → Recall organizes, tags, and generates instant audio/video explainers on command. Your study bookmarks, reimagined as a personal tutor.',
     image: '',
-    technologies: ['React', 'Node.js', 'MongoDB'],
+    technologies: ['AI', 'WhatsApp Bot', 'Telegram', 'Learning Tech'],
     liveUrl: '#',
     githubUrl: '#',
   },
   {
     id: '3',
-    title: 'Project Three',
-    description: 'Design & Development',
+    title: 'F1 Pitwall',
+    description: 'Telemetry Reimagined for F1 fans. Talk to race data like an engineer. Get technical, data-backed answers: "Why is Lewis losing time in Sector 2?" The ultimate second-screen for the world\'s most data-rich sport.',
     image: '',
-    technologies: ['Vue.js', 'Firebase', 'CSS'],
+    technologies: ['AI', 'Gemini', 'Data Analytics', 'Sports Tech'],
     liveUrl: '#',
     githubUrl: '#',
   },
   {
     id: '4',
-    title: 'Project Four',
-    description: 'Full Stack Development',
+    title: 'Kathy',
+    description: 'Personal Diet Specialist on WhatsApp with zero friction. Snap a meal photo → Kathy identifies food, estimates portions, calculates macros instantly. Like a nutritionist who texts back before you eat it.',
     image: '',
-    technologies: ['React Native', 'Express', 'PostgreSQL'],
+    technologies: ['AI', 'WhatsApp Bot', 'Computer Vision', 'Health Tech'],
     liveUrl: '#',
     githubUrl: '#',
   },
@@ -49,9 +49,9 @@ export default function WorkSection() {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="mb-16">
-          <h2 className="text-4xl md:text-6xl font-medium mb-4">Recent Work</h2>
+          <h2 className="text-4xl md:text-6xl font-medium mb-4">What I'm Building</h2>
           <p className="text-muted text-lg">
-            A selection of projects I've worked on recently
+            AI-fuelled systems that remove friction, amplify humans, and quietly push the world forward
           </p>
         </div>
 
