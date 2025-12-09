@@ -2,9 +2,10 @@
 ## Portfolio Website - Dennis Snellenberg Style
 
 **Project:** Abhishai Vardhan Portfolio Website
-**Version:** 1.0
+**Version:** 1.1
 **Date:** December 9, 2024
 **Author:** Abhishai Vardhan
+**Updated:** Added Work, About, and Contact pages
 
 ---
 
@@ -385,6 +386,416 @@ Instagram
 - Respects user's motion preferences
 - Enhances UX without being distracting
 - Works on all browsers
+
+---
+
+### 3.11 Work Page
+
+**Priority:** High
+**Description:** Dedicated portfolio page showcasing all projects with filtering capabilities
+
+**Requirements:**
+- **Page Title:** "Creating next level digital products"
+- **Page Route:** `/work`
+- **Project Display:** List/grid layout with responsive design
+- **Project Count:** Display 11 featured projects on main view
+- **Archive Link:** Link to full archive showing all 66+ projects
+- **Project Information per Card:**
+  - Project title
+  - Location/Client name
+  - Services provided (Design & Development, Interaction & Development, etc.)
+  - Year completed (2020-2024)
+  - Link to individual project detail page
+  - Project thumbnail image
+- **Filter System:**
+  - "All" view (default - shows all projects)
+  - "Design" filter (shows design-focused projects)
+  - "Development" filter (shows development-focused projects)
+  - Additional filters available: Client, Location, Services, Year
+  - Active filter highlighted
+  - Filter count displayed (e.g., "Design (7)")
+- **Interactive Elements:**
+  - Hover effects on project cards
+  - Arrow indicators for clickable items
+  - Smooth transitions between filtered views
+  - Project cards link to detail pages
+- **Call-to-Action Section:**
+  - "Let's work together" heading
+  - Contact information (email, phone)
+  - "Get in touch" button
+  - Social media links
+- **Metadata Display:**
+  - Total project count visible
+  - Filter counts update dynamically
+
+**Layout Structure:**
+```
+Page Header
+  └── Multilingual Greeting (animated)
+
+Main Heading
+  └── "Creating next level digital products"
+
+Filter Navigation
+  ├── All
+  ├── Design (7)
+  ├── Development (11)
+  └── Additional Filters (Client, Location, Services, Year)
+
+Projects Grid/List
+  └── Project Cards (11 featured)
+       ├── Thumbnail Image
+       ├── Project Title
+       ├── Location/Client
+       ├── Services
+       ├── Year
+       └── Link to Detail Page
+
+Archive Link
+  └── "Archive (66)" - Link to full project archive
+
+Footer CTA
+  ├── "Let's work together"
+  ├── Contact Info
+  └── Social Links
+```
+
+**Sample Projects to Display:**
+1. TWICE - Interaction & Development, 2024
+2. The Damai - Design & Development, 2024
+3. FABRIC™ - Design & Development, 2023
+4. Aanstekelijk - Design & Development, 2023
+5. Base Create - Design & Development, 2023
+6. AVVR - Design & Development, 2022
+7. GraphicHunters - Design & Development, 2020
+8. (4 more featured projects)
+
+**Interaction Requirements:**
+- Filter clicks update URL parameters
+- Filtered view maintains smooth transitions
+- Project cards have hover state (scale, shadow, overlay)
+- Loading states for filter changes
+- Keyboard accessible (Tab navigation, Enter to activate)
+- Back button works correctly with filters
+
+**Responsive Behavior:**
+- Desktop: 2-3 column grid layout
+- Tablet: 2 column grid layout
+- Mobile: Single column list layout
+- Filter navigation: Horizontal scroll on mobile
+- Touch-friendly filter buttons (44x44px minimum)
+
+**Performance Requirements:**
+- Fast filter transitions (< 300ms)
+- Lazy load project images below fold
+- Optimize thumbnail images (WebP format)
+- No layout shift during filtering
+
+**Acceptance Criteria:**
+- All 11 featured projects display correctly
+- Filters work and update project display
+- Filter counts are accurate
+- Project cards are clickable and link to detail pages
+- Archive link shows correct total count
+- Responsive on all screen sizes
+- Hover effects work smoothly
+- Page loads fast (< 2s)
+- Accessible via keyboard
+
+---
+
+### 3.12 About Page
+
+**Priority:** High
+**Description:** Personal information page detailing services, expertise, and professional background
+
+**Requirements:**
+- **Page Title:** "Helping brands thrive in the digital world"
+- **Page Route:** `/about`
+- **Main Sections:**
+
+**1. Hero Section:**
+- Multilingual greeting (animated)
+- Main heading: "Helping brands thrive in the digital world"
+- Tagline: "Always exploring..."
+- Brief value proposition
+
+**2. Professional Statement:**
+- Core message: "I help companies from all over the world with tailor-made solutions"
+- Philosophy: "With each project, I push my work to new horizons, always putting quality first"
+- International clientele emphasis
+
+**3. Services Section (Numbered 01, 02, 03):**
+
+**Service 01: Design**
+- Title: "Design"
+- Description: Focus on micro animations, transitions, and interaction design
+- Deliverables: Complete design solutions
+
+**Service 02: Development**
+- Title: "Development"
+- Description: Building with Webflow or Kirby CMS
+- Focus: Scalable websites, user-friendly solutions
+
+**Service 03: The Full Package**
+- Title: "The Full Package"
+- Description: Complete website creation from design to development
+- Emphasis: Integrated solutions
+
+**4. Credentials Section:**
+- **Awwwards Judge:** "Awwwards judge '19-25"
+- Description: Member of international jury evaluating world-class websites
+- Industry recognition highlight
+
+**5. Featured Work Section:**
+- Display 6-7 recent projects
+- Project titles with links:
+  - TWICE
+  - The Damai
+  - FABRIC™
+  - Aanstekelijk
+  - Base Create
+  - AVVR
+  - GraphicHunters
+- Link to full Work page
+
+**6. Contact Section:**
+- "Let's work together" CTA
+- Email: info@dennissnellenberg.com (replace with user's email)
+- Phone: +31 6 27 84 74 30 (replace with user's phone)
+- "Get in touch" button
+- Social media links (Awwwards, Instagram, Twitter, LinkedIn)
+
+**Layout Structure:**
+```
+Page Header
+  └── Multilingual Greeting
+
+Hero Section
+  ├── Main Heading
+  └── Tagline
+
+Professional Statement
+  └── Bio paragraphs
+
+Services Grid (3 columns)
+  ├── 01 - Design
+  ├── 02 - Development
+  └── 03 - The Full Package
+
+Credentials
+  └── Awwwards Judge Badge
+
+Featured Work
+  └── Project Links (6-7 projects)
+
+Contact CTA
+  ├── Email
+  ├── Phone
+  ├── Button
+  └── Social Links
+
+Footer
+  └── Metadata (time, version, copyright)
+```
+
+**Content Requirements:**
+- Professional bio (2-3 paragraphs)
+- Service descriptions (3 services)
+- Credentials and achievements
+- Featured project list
+- Contact information
+- Social media links
+
+**Design Requirements:**
+- Numbered sections (01, 02, 03) for visual hierarchy
+- Clean typography hierarchy
+- Generous whitespace
+- Professional photography (optional)
+- Consistent with overall site design
+
+**Responsive Behavior:**
+- Services grid: 3 columns → 1 column on mobile
+- Typography scales appropriately
+- Touch-friendly links and buttons
+- Optimized image loading
+
+**Acceptance Criteria:**
+- All content sections display correctly
+- Services are clearly described
+- Credentials are prominently featured
+- Contact information is accessible
+- Links to work page function
+- Responsive on all devices
+- Professional appearance maintained
+- Fast page load
+
+---
+
+### 3.13 Contact Page
+
+**Priority:** High
+**Description:** Dedicated contact page with form and contact information
+
+**Requirements:**
+- **Page Title:** "Let's start a project together"
+- **Page Route:** `/contact`
+- **Main Components:**
+
+**1. Page Header:**
+- Multilingual greeting (10 languages)
+- Main heading: "Let's start a project together"
+- Arrow indicator for engagement
+
+**2. Contact Form:**
+- **Form Fields (Sequential, Numbered):**
+
+  **Field 01: Phone Number**
+  - Label: "01"
+  - Placeholder or label text
+  - Input type: tel
+  - Optional field
+
+  **Field 02: Name**
+  - Label: "What's your name?" / "02"
+  - Input type: text
+  - Required field
+
+  **Field 03: Email**
+  - Label: "What's your email?" / "03"
+  - Input type: email
+  - Required field
+  - Email validation
+
+  **Field 04: Organization**
+  - Label: "What's the name of your organization?" / "04"
+  - Input type: text
+  - Optional field
+
+  **Field 05: Services**
+  - Label: "What services are you looking for?" / "05"
+  - Input type: textarea or select
+  - Multiple options available
+  - Required field
+
+  **Field 06: Message/Details**
+  - Additional message field
+  - Input type: textarea
+  - Optional field for further details
+
+- **Form Submit Button:**
+  - Clear call-to-action text
+  - Loading state during submission
+  - Success confirmation message
+  - Error handling and validation
+
+**3. Direct Contact Information:**
+- **Email:** info@dennissnellenberg.com (replace with user's)
+- **Phone:** +31 6 27 84 74 30 (replace with user's)
+- **Location:** "The Netherlands" (replace with user's location)
+- **Local Time Display:** Current time in IST (real-time)
+
+**4. Social Media Links:**
+- **Awwwards** profile link
+- **Instagram** (@codebydennis - replace with user's)
+- **Twitter** (@codebydennis - replace with user's)
+- **LinkedIn** professional profile
+- All links open in new tabs
+
+**5. Business Information (Footer):**
+- Chamber of Commerce (CoC) number
+- VAT number
+- Copyright information
+- Version/Edition
+
+**Layout Structure:**
+```
+Page Header
+  └── Multilingual Greeting
+
+Main Heading
+  └── "Let's start a project together"
+
+Two-Column Layout
+  ├── Left Column: Contact Form
+  │    ├── Field 01: Phone
+  │    ├── Field 02: Name
+  │    ├── Field 03: Email
+  │    ├── Field 04: Organization
+  │    ├── Field 05: Services
+  │    ├── Field 06: Message
+  │    └── Submit Button
+  │
+  └── Right Column: Direct Contact
+       ├── Email
+       ├── Phone
+       ├── Location
+       ├── Local Time
+       └── Social Links
+
+Footer
+  ├── Business Registration (CoC, VAT)
+  └── Copyright & Version
+```
+
+**Form Functionality:**
+- **Validation:**
+  - Required fields marked
+  - Email format validation
+  - Phone number format validation (optional)
+  - Display validation errors inline
+  - Prevent submission with invalid data
+
+- **Submission:**
+  - AJAX submission (no page reload)
+  - Loading spinner during submission
+  - Success message: "Thank you! I'll get back to you soon."
+  - Error message: "Oops! Something went wrong. Please try again."
+  - Clear form on successful submission
+  - Send email notification to site owner
+
+- **Accessibility:**
+  - Proper label associations
+  - ARIA labels where needed
+  - Focus management
+  - Error announcements for screen readers
+  - Keyboard navigable
+
+**Design Requirements:**
+- Numbered fields for visual hierarchy (01-06)
+- Clean, minimal form design
+- Clear field labels
+- Adequate spacing between fields
+- Visible focus states
+- Professional appearance
+
+**Technical Requirements:**
+- Form validation (client-side and server-side)
+- Spam protection (honeypot or reCAPTCHA)
+- Email delivery service integration
+- Success/error state management
+- Form data sanitization
+- GDPR compliance (if applicable)
+
+**Responsive Behavior:**
+- Two columns → Single column on mobile
+- Form fields full width on mobile
+- Touch-friendly input fields
+- Adequate spacing for mobile keyboards
+- Social links accessible on all sizes
+
+**Acceptance Criteria:**
+- All form fields display and function correctly
+- Form validation works (client and server-side)
+- Required fields enforced
+- Email sends successfully on submission
+- Success/error messages display appropriately
+- Contact information is accurate and clickable
+- Social links work and open in new tabs
+- Form is accessible via keyboard
+- Responsive on all devices
+- WCAG 2.1 AA compliant
+- Spam protection in place
 
 ---
 

@@ -3,8 +3,9 @@
 
 **Project:** Abhishai Vardhan Portfolio Website
 **Framework:** Next.js 14+ with App Router
-**Version:** 1.0
+**Version:** 1.1
 **Date:** December 9, 2024
+**Updated:** Added Work, About, and Contact pages
 
 ---
 

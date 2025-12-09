@@ -2,9 +2,10 @@
 ## Portfolio Website - Technical Implementation Guide
 
 **Project:** Abhishai Vardhan Portfolio Website
-**Version:** 1.0
+**Version:** 1.1
 **Date:** December 9, 2024
 **Tech Stack:** Next.js 14+ • TypeScript • Tailwind CSS v4
+**Updated:** Added Work, About, and Contact pages specifications
 
 ---
 
@@ -31,6 +32,12 @@ portfolio-website/
 ├── app/                      # Next.js app directory
 │   ├── layout.tsx           # Root layout with metadata
 │   ├── page.tsx             # Home page
+│   ├── work/                # Work page route
+│   │   └── page.tsx        # Projects listing with filters
+│   ├── about/               # About page route
+│   │   └── page.tsx        # About and services page
+│   ├── contact/             # Contact page route
+│   │   └── page.tsx        # Contact form page
 │   ├── globals.css          # Global styles
 │   └── favicon.ico          # Favicon
 ├── components/              # React components

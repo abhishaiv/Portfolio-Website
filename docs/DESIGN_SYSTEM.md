@@ -2,8 +2,11 @@
 ## Portfolio Website Design Language
 
 **Project:** Abhishai Vardhan Portfolio Website
+**Version:** 1.1
+**Date:** December 9, 2024
 **Style Reference:** Dennis Snellenberg Portfolio
 **Design Philosophy:** Minimal • Sophisticated • Cutting-edge
+**Updated:** Added Work, About, and Contact pages specifications
 
 ---
 
