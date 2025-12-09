@@ -1,15 +1,19 @@
-import Hero from '@/sections/Hero';
-import About from '@/sections/About';
-import Projects from '@/sections/Projects';
-import Contact from '@/sections/Contact';
+import Navigation from '@/components/Navigation';
+import HeroSection from '@/components/HeroSection';
+import WorkSection from '@/components/WorkSection';
+import AboutSection from '@/components/AboutSection';
+import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
-    <main>
-      <Hero />
-      <About />
-      <Projects />
-      <Contact />
-    </main>
+    <>
+      <Navigation />
+      <main>
+        <HeroSection />
+        <WorkSection />
+        <AboutSection />
+      </main>
+      <Footer />
+    </>
   );
 }

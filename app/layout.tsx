@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio | Your Name",
-  description: "Welcome to my portfolio website. Explore my projects and get in touch.",
+  title: "Abhishai Vardhan | Freelance Designer & Developer",
+  description: "Freelance designer and developer helping brands stand out in the digital era. Specializing in design, code & interaction.",
 };
 
 export default function RootLayout({
