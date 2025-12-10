@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { allProjects } from '@/lib/projects';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://abhishaivardhan.com';
+  const baseUrl = 'https://portfolio-website-ogve2u5jv-abhishai-vardhans-projects.vercel.app';
 
   // Static pages
   const staticPages = [

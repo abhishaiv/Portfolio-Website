@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://abhishaivardhan.com'),
+  metadataBase: new URL('https://portfolio-website-ogve2u5jv-abhishai-vardhans-projects.vercel.app'),
   title: {
     default: "Abhishai Vardhan | AI Builder + Market Intelligence Specialist",
     template: "%s | Abhishai Vardhan"
