@@ -13,8 +13,49 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Abhishai Vardhan | AI Builder + Market Intelligence Specialist",
+  metadataBase: new URL('https://abhishaivardhan.com'),
+  title: {
+    default: "Abhishai Vardhan | AI Builder + Market Intelligence Specialist",
+    template: "%s | Abhishai Vardhan"
+  },
   description: "Building AI-fuelled systems that upgrade humans. Market Intelligence at Cognizant by day, AI product builder by night. Creator of Tailr AI, Recall, F1 Pitwall, and Kathy.",
+  keywords: ["AI Builder", "Market Intelligence", "AI Products", "Tailr AI", "Recall", "F1 Pitwall", "Kathy", "Cognizant", "Portfolio", "AI Development", "Machine Learning"],
+  authors: [{ name: "Abhishai Vardhan" }],
+  creator: "Abhishai Vardhan",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://abhishaivardhan.com",
+    siteName: "Abhishai Vardhan Portfolio",
+    title: "Abhishai Vardhan | AI Builder + Market Intelligence Specialist",
+    description: "Building AI-fuelled systems that upgrade humans. Market Intelligence at Cognizant by day, AI product builder by night.",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Abhishai Vardhan - AI Builder",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Abhishai Vardhan | AI Builder + Market Intelligence Specialist",
+    description: "Building AI-fuelled systems that upgrade humans. Creator of Tailr AI, Recall, F1 Pitwall, and Kathy.",
+    creator: "@abhishaiv",
+    images: ["/og-image.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 export default function RootLayout({

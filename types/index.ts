@@ -8,6 +8,11 @@ export interface Project {
   technologies: string[];
   liveUrl?: string;
   githubUrl?: string;
+  year?: number;
+  location?: string;
+  services?: string[];
+  category?: 'design' | 'development' | 'both';
+  slug?: string;
 }
 
 export interface Skill {

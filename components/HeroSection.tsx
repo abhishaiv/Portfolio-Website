@@ -65,13 +65,19 @@ export default function HeroSection() {
         {/* CTA Section */}
         <div className="mt-12 flex flex-col sm:flex-row gap-4">
           <a
-            href="#work"
+            href="/work"
             className="px-8 py-4 bg-foreground text-background rounded-full hover:bg-accent transition-colors text-center"
           >
             View My Work
           </a>
           <a
-            href="#contact"
+            href="/about"
+            className="px-8 py-4 border border-foreground text-foreground rounded-full hover:bg-foreground hover:text-background transition-colors text-center"
+          >
+            About Me
+          </a>
+          <a
+            href="/contact"
             className="px-8 py-4 border border-foreground text-foreground rounded-full hover:bg-foreground hover:text-background transition-colors text-center"
           >
             Get In Touch

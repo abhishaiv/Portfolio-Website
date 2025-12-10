@@ -12,10 +12,17 @@ export default function AboutSection() {
               I like working with people who enjoy solving real problems — the kind that require thinking, not templates.
               If you're building something in AI, market intelligence, productivity, or just want to talk systems that think — I'd love to hear from you.
             </p>
-            <p className="text-lg text-muted leading-relaxed">
+            <p className="text-lg text-muted leading-relaxed mb-8">
               Whether it's collaboration, consulting, or a crazy idea you want to test, I usually reply faster than expected.
               A simple email can start something surprisingly good.
             </p>
+            <a
+              href="/contact"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-foreground text-background rounded-full hover:opacity-90 transition-opacity"
+            >
+              Get in touch
+              <span>→</span>
+            </a>
           </div>
 
           {/* Right Column - Contact Info */}

@@ -9,7 +9,7 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <Link href={project.liveUrl || project.githubUrl || '#'} target="_blank" rel="noopener noreferrer">
+    <Link href={`/work/${project.slug}`}>
       <div className="group cursor-pointer">
         {/* Project Image */}
         <div className="relative aspect-[4/3] mb-4 overflow-hidden rounded-lg bg-border">
@@ -33,9 +33,16 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
         {/* Project Info */}
         <div className="space-y-2">
-          <h3 className="text-xl md:text-2xl font-medium group-hover:text-accent transition-colors">
-            {project.title}
-          </h3>
+          <div className="flex items-start justify-between gap-4">
+            <h3 className="text-xl md:text-2xl font-medium group-hover:text-accent transition-colors">
+              {project.title}
+            </h3>
+            {project.year && (
+              <span className="text-sm text-muted mt-1 flex-shrink-0">
+                {project.year}
+              </span>
+            )}
+          </div>
 
           <div className="flex items-center justify-between text-sm text-muted">
             <span>{project.technologies.join(', ')}</span>
