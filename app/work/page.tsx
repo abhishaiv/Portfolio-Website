@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { motion, AnimatePresence } from 'framer-motion';
 import { allProjects } from '@/lib/projects';
 import TopNav from '@/components/TopNav';
 
@@ -25,9 +26,14 @@ export default function WorkPage() {
         {/* Headline */}
         <section className="px-6 md:px-12 lg:px-24 py-16">
           <div className="max-w-7xl mx-auto">
-            <h1 className="text-display font-light max-w-4xl">
+            <motion.h1
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8 }}
+              className="text-display font-light max-w-4xl"
+            >
               Creating next level digital products
-            </h1>
+            </motion.h1>
           </div>
         </section>
 
@@ -93,26 +99,35 @@ export default function WorkPage() {
             </div>
 
             {/* Projects */}
-            {filteredProjects.map((project) => (
-              <Link
-                key={project.id}
-                href={`/work/${project.slug}`}
-                className="grid grid-cols-12 gap-4 py-8 border-b border-border hover:opacity-60 transition-opacity group"
-              >
-                <div className="col-span-4">
-                  <h2 className="text-2xl md:text-4xl font-light">{project.title}</h2>
-                </div>
-                <div className="col-span-3 flex items-center">
-                  <p className="text-sm">{project.location || 'Global'}</p>
-                </div>
-                <div className="col-span-3 flex items-center">
-                  <p className="text-sm">{project.services?.[0] || 'AI Development'}</p>
-                </div>
-                <div className="col-span-2 flex items-center justify-end">
-                  <p className="text-sm">{project.year || '2024'}</p>
-                </div>
-              </Link>
-            ))}
+            <AnimatePresence mode="wait">
+              {filteredProjects.map((project, index) => (
+                <motion.div
+                  key={project.id}
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -20, opacity: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                >
+                  <Link
+                    href={`/work/${project.slug}`}
+                    className="grid grid-cols-12 gap-4 py-8 border-b border-border hover:opacity-60 transition-opacity group"
+                  >
+                    <div className="col-span-4">
+                      <h2 className="text-2xl md:text-4xl font-light">{project.title}</h2>
+                    </div>
+                    <div className="col-span-3 flex items-center">
+                      <p className="text-sm">{project.location || 'Global'}</p>
+                    </div>
+                    <div className="col-span-3 flex items-center">
+                      <p className="text-sm">{project.services?.[0] || 'AI Development'}</p>
+                    </div>
+                    <div className="col-span-2 flex items-center justify-end">
+                      <p className="text-sm">{project.year || '2024'}</p>
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
+            </AnimatePresence>
 
             {/* Archive Button */}
             <div className="mt-20 flex justify-center">
