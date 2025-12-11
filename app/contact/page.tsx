@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, FormEvent } from 'react';
+import { motion } from 'framer-motion';
 import TopNav from '@/components/TopNav';
 
 export default function ContactPage() {
@@ -52,16 +53,26 @@ export default function ContactPage() {
         <section className="px-6 md:px-12 lg:px-24 pt-32 pb-16">
           <div className="max-w-7xl mx-auto">
             <div className="flex items-center justify-between">
-              <h1 className="text-6xl md:text-7xl lg:text-8xl font-light leading-tight max-w-3xl">
+              <motion.h1
+                initial={{ y: 40, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.8 }}
+                className="text-6xl md:text-7xl lg:text-8xl font-light leading-tight max-w-3xl"
+              >
                 Let's start a<br/>
                 project<br/>
                 together
-              </h1>
-              <div className="hidden lg:block w-32 h-32 rounded-full bg-gray-600 flex-shrink-0 overflow-hidden">
+              </motion.h1>
+              <motion.div
+                initial={{ scale: 0, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ delay: 0.4, duration: 0.6, type: "spring" }}
+                className="hidden lg:block w-32 h-32 rounded-full bg-gray-600 flex-shrink-0 overflow-hidden"
+              >
                 <div className="w-full h-full flex items-center justify-center text-gray-400">
                   [Photo]
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -71,7 +82,12 @@ export default function ContactPage() {
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
               {/* Left Side: Contact Form */}
-              <div className="lg:col-span-7">
+              <motion.div
+                initial={{ x: -30, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ delay: 0.3, duration: 0.8 }}
+                className="lg:col-span-7"
+              >
                 <form onSubmit={handleSubmit} className="space-y-12">
                   {/* Field 01 - Name */}
                   <div>
@@ -172,13 +188,16 @@ export default function ContactPage() {
 
                   {/* Submit Button */}
                   <div className="pt-12 flex justify-center">
-                    <button
+                    <motion.button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-48 h-48 rounded-full bg-blue-600 hover:bg-blue-700 text-white text-xl font-light transition-all disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105"
+                      whileHover={{ scale: 1.05, rotate: 5 }}
+                      whileTap={{ scale: 0.95 }}
+                      transition={{ duration: 0.3 }}
+                      className="w-48 h-48 rounded-full bg-blue-600 hover:bg-blue-700 text-white text-xl font-light disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {isSubmitting ? 'Sending...' : 'Send it!'}
-                    </button>
+                    </motion.button>
                   </div>
 
                   {/* Status Messages */}
@@ -193,10 +212,15 @@ export default function ContactPage() {
                     </p>
                   )}
                 </form>
-              </div>
+              </motion.div>
 
               {/* Right Side: Contact Details Sidebar */}
-              <div className="lg:col-span-5 space-y-12">
+              <motion.div
+                initial={{ x: 30, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ delay: 0.5, duration: 0.8 }}
+                className="lg:col-span-5 space-y-12"
+              >
                 {/* Contact Details */}
                 <div>
                   <p className="text-xs text-gray-500 uppercase tracking-wider mb-4">CONTACT DETAILS</p>
@@ -246,7 +270,7 @@ export default function ContactPage() {
                     </a>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
