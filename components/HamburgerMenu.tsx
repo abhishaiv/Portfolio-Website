@@ -9,7 +9,7 @@ export default function HamburgerMenu() {
   return (
     <>
       <button
-        className="hamburger-menu md:hidden"
+        className="hamburger-menu"
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Menu"
       >

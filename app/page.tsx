@@ -1,6 +1,9 @@
+'use client';
+
 import Link from 'next/link';
 import { featuredProjects } from '@/lib/projects';
 import StructuredData from '@/components/StructuredData';
+import LocalTime from '@/components/LocalTime';
 
 export default function Home() {
   return (
@@ -165,7 +168,7 @@ export default function Home() {
                 </div>
                 <div>
                   <p className="text-xs uppercase mb-1">LOCAL TIME</p>
-                  <p>IST India</p>
+                  <LocalTime />
                 </div>
               </div>
               <div className="flex gap-6">
