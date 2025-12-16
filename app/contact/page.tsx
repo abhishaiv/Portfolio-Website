@@ -98,7 +98,11 @@ export default function ContactPage() {
               className="lg:col-span-5 space-y-8"
             >
               {/* Profile Photo */}
-              <div className="w-32 h-32 rounded-full bg-gray-600" />
+              <img
+                src="/images/portfolio/profile.jpg"
+                alt="Abhishai Vardhan"
+                className="w-32 h-32 rounded-full object-cover"
+              />
 
               {/* Contact Details */}
               <div>

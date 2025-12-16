@@ -209,9 +209,17 @@ export default function Home() {
               >
                 <Link href={`/work/${project.slug}`}>
                   <div className="aspect-video bg-gray-900 rounded-lg overflow-hidden hover:scale-[1.02] transition-transform duration-300">
-                    <div className="w-full h-full flex items-center justify-center text-white/40">
-                      Project Screenshot
-                    </div>
+                    {project.image ? (
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center text-white/40">
+                        Project Screenshot
+                      </div>
+                    )}
                   </div>
                 </Link>
               </motion.div>
@@ -231,7 +239,11 @@ export default function Home() {
               viewport={{ once: true }}
               className="flex items-center gap-6"
             >
-              <div className="w-20 h-20 rounded-full bg-gray-600 flex-shrink-0" />
+              <img
+                src="/images/portfolio/profile.jpg"
+                alt="Abhishai Vardhan"
+                className="w-20 h-20 rounded-full object-cover flex-shrink-0"
+              />
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-light">
                 Let's build<br/>something cooler
               </h2>
