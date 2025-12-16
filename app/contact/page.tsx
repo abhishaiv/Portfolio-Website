@@ -3,6 +3,7 @@
 import { useState, FormEvent } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import Navigation from '@/components/Navigation';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -46,31 +47,7 @@ export default function ContactPage() {
 
   return (
     <>
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 bg-[#2b2b2b] border-b border-white/10 z-50">
-        <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-6 flex justify-between items-center">
-          <Link href="/" className="text-base font-medium text-white">
-            Build with Abhishai
-          </Link>
-          <div className="flex gap-8 items-center text-white">
-            <Link href="/building" className="text-sm hover:opacity-60 transition-opacity">
-              Building
-            </Link>
-            <Link href="/work" className="text-sm hover:opacity-60 transition-opacity">
-              Projects
-            </Link>
-            <Link href="/about" className="text-sm hover:opacity-60 transition-opacity">
-              About
-            </Link>
-            <Link
-              href="/contact"
-              className="text-sm px-6 py-2 border border-white rounded-md hover:bg-white hover:text-black transition-colors"
-            >
-              Contact
-            </Link>
-          </div>
-        </div>
-      </nav>
+      <Navigation theme="dark" />
 
       <main className="min-h-screen bg-[#2b2b2b] text-white pt-32">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-16">
