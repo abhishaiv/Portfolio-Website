@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Navigation from '@/components/Navigation';
 
@@ -75,11 +76,15 @@ export default function ContactPage() {
               className="lg:col-span-5 space-y-8"
             >
               {/* Profile Photo */}
-              <img
-                src="/images/portfolio/profile.jpg"
-                alt="Abhishai Vardhan"
-                className="w-32 h-32 rounded-full object-cover"
-              />
+              <div className="relative w-32 h-32 rounded-full overflow-hidden">
+                <Image
+                  src="/images/portfolio/profile.jpg"
+                  alt="Abhishai Vardhan"
+                  fill
+                  className="object-cover"
+                  sizes="128px"
+                />
+              </div>
 
               {/* Contact Details */}
               <div>

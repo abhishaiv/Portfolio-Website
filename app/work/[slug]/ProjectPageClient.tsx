@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Project } from '@/types';
 import Navigation from '@/components/Navigation';
@@ -101,12 +102,15 @@ export default function ProjectPageClient({ project, nextProject }: ProjectPageC
             transition={{ duration: 0.8, delay: 0.4 }}
             className="max-w-[1400px] mx-auto"
           >
-            <div className="aspect-video bg-gray-100 rounded-lg overflow-hidden">
+            <div className="aspect-video bg-gray-100 rounded-lg overflow-hidden relative">
               {project.image ? (
-                <img
+                <Image
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1400px) 90vw, 1400px"
+                  priority
                 />
               ) : (
                 <div className="w-full h-full flex items-center justify-center">
@@ -216,11 +220,15 @@ export default function ProjectPageClient({ project, nextProject }: ProjectPageC
               viewport={{ once: true }}
               className="flex items-center gap-6"
             >
-              <img
-                src="/images/portfolio/profile.jpg"
-                alt="Abhishai Vardhan"
-                className="w-20 h-20 rounded-full object-cover flex-shrink-0"
-              />
+              <div className="relative w-20 h-20 rounded-full overflow-hidden flex-shrink-0">
+                <Image
+                  src="/images/portfolio/profile.jpg"
+                  alt="Abhishai Vardhan"
+                  fill
+                  className="object-cover"
+                  sizes="80px"
+                />
+              </div>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-light">
                 Let's build<br/>something cooler
               </h2>

@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { allProjects } from '@/lib/projects';
 import Navigation from '@/components/Navigation';
@@ -90,11 +91,15 @@ export default function WorkPage() {
               viewport={{ once: true }}
               className="flex items-center gap-6"
             >
-              <img
-                src="/images/portfolio/profile.jpg"
-                alt="Abhishai Vardhan"
-                className="w-20 h-20 rounded-full object-cover flex-shrink-0"
-              />
+              <div className="relative w-20 h-20 rounded-full overflow-hidden flex-shrink-0">
+                <Image
+                  src="/images/portfolio/profile.jpg"
+                  alt="Abhishai Vardhan"
+                  fill
+                  className="object-cover"
+                  sizes="80px"
+                />
+              </div>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-light">
                 Let's build<br/>something cooler
               </h2>
