@@ -4,290 +4,289 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { featuredProjects } from '@/lib/projects';
 import StructuredData from '@/components/StructuredData';
-import LocalTime from '@/components/LocalTime';
 
 export default function Home() {
   return (
     <>
       <StructuredData />
 
-      {/* Full-Screen Hero Section with Photo */}
+      {/* Clean White Navigation */}
+      <nav className="fixed top-0 left-0 right-0 bg-white border-b border-gray-100 z-50">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-6 flex justify-between items-center">
+          <Link href="/" className="text-base font-medium">
+            Build with Abhishai
+          </Link>
+          <div className="flex gap-8 items-center">
+            <Link href="/building" className="text-sm hover:opacity-60 transition-opacity">
+              Building
+            </Link>
+            <Link href="/work" className="text-sm hover:opacity-60 transition-opacity">
+              Projects
+            </Link>
+            <Link href="/about" className="text-sm hover:opacity-60 transition-opacity">
+              About
+            </Link>
+            <Link
+              href="/contact"
+              className="text-sm px-6 py-2 border border-black rounded-md hover:bg-black hover:text-white transition-colors"
+            >
+              Contact
+            </Link>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
       <section className="relative h-screen bg-gray-400 overflow-hidden">
-        {/* Hero Image Placeholder */}
         <motion.div
-          initial={{ scale: 1.1, opacity: 0 }}
+          initial={{ scale: 1.05, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
-          className="absolute inset-0 bg-gradient-to-br from-gray-300 to-gray-500 flex items-center justify-center"
-        >
-          <p className="text-white/40 text-2xl">[Your Photo Here]</p>
-        </motion.div>
+          transition={{ duration: 1.2, ease: [0.6, 0.05, 0.01, 0.9] }}
+          className="absolute inset-0 bg-gradient-to-br from-gray-300 to-gray-500"
+        />
 
-        {/* Top Navigation */}
-        <motion.div
-          initial={{ y: -20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.6 }}
-          className="absolute top-0 left-0 right-0 px-6 md:px-12 py-8 flex justify-between items-center"
-        >
-          <p className="text-white text-sm">© Code by Abhishai</p>
-          <nav className="hidden md:flex gap-8 text-white">
-            <Link href="/work" className="hover:opacity-60 transition-opacity">Work</Link>
-            <Link href="/about" className="hover:opacity-60 transition-opacity">About</Link>
-            <Link href="/contact" className="hover:opacity-60 transition-opacity">Contact</Link>
-          </nav>
-        </motion.div>
-
-        {/* Location Badge */}
+        {/* Located in India Badge */}
         <motion.div
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
-          className="absolute left-0 top-1/2 -translate-y-1/2"
+          transition={{ delay: 0.6, duration: 0.9 }}
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-10"
         >
-          <div className="bg-black/80 text-white py-4 px-8 rounded-r-full flex items-center gap-3">
-            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-              <circle cx="10" cy="10" r="8" stroke="white" strokeWidth="1" fill="none"/>
-              <path d="M10 2 L18 10 L10 18 L2 10 Z" fill="none" stroke="white" strokeWidth="1"/>
-            </svg>
-            <div className="text-left">
-              <p className="text-xs">Located</p>
-              <p className="text-xs">in</p>
-              <p className="text-xs font-medium">India</p>
+          <div className="bg-black/90 text-white py-4 px-8 rounded-r-full flex items-center gap-4">
+            <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="9" strokeWidth="1.5"/>
+                <path d="M3 12h18M12 3c2.5 2.5 3 5.5 3 9s-.5 6.5-3 9M12 3c-2.5 2.5-3 5.5-3 9s.5 6.5 3 9" strokeWidth="1.5"/>
+              </svg>
+            </div>
+            <div className="text-sm leading-tight">
+              Located in<br/>India
             </div>
           </div>
         </motion.div>
 
-        {/* Role Text - Top Right */}
+        {/* AI Builder Text */}
         <motion.div
           initial={{ x: 50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
-          transition={{ delay: 0.7, duration: 0.8 }}
-          className="absolute right-12 top-1/3 text-right text-white"
+          transition={{ delay: 0.8, duration: 0.9 }}
+          className="absolute right-12 md:right-20 top-[40%] text-right text-white z-10"
         >
-          <p className="text-xl md:text-2xl font-light mb-2">AI Builder &</p>
-          <p className="text-xl md:text-2xl font-light">Market Intelligence</p>
-          <p className="text-xl md:text-2xl font-light">Specialist</p>
+          <p className="text-base md:text-lg font-light">AI Builder</p>
+          <p className="text-base md:text-lg font-light">& Market Intelligence</p>
         </motion.div>
 
-        {/* Huge Name Overlay at Bottom */}
+        {/* Name */}
         <motion.div
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.9, duration: 1, ease: "easeOut" }}
-          className="absolute bottom-0 left-0 right-0 overflow-hidden"
+          transition={{ delay: 1, duration: 1.1, ease: [0.6, 0.05, 0.01, 0.9] }}
+          className="absolute bottom-12 md:bottom-16 left-6 md:left-12 z-10"
         >
-          <h1 className="text-white font-light leading-none px-6 md:px-12 pb-8" style={{fontSize: 'clamp(3rem, 15vw, 12rem)'}}>
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-light text-white leading-none">
             Abhishai Vardhan
           </h1>
         </motion.div>
 
-        {/* Scroll Arrow */}
+        {/* Scroll Indicator */}
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 0.6 }}
-          className="absolute bottom-32 right-12 text-white animate-bounce"
+          animate={{ opacity: [0, 1, 0], y: [0, 8, 0] }}
+          transition={{
+            delay: 1.8,
+            duration: 2,
+            repeat: Infinity,
+            repeatDelay: 0.5
+          }}
+          className="absolute bottom-12 right-12 text-white z-10"
         >
-          <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <path d="M19 14l-7 7m0 0l-7-7m7 7V3" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
         </motion.div>
       </section>
 
-      <main className="bg-background text-foreground">
-        {/* Headline Section */}
-        <section className="section-spacing px-6 md:px-12 lg:px-24">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            {/* Large Headline */}
+      {/* Main Content */}
+      <main className="bg-white">
+        {/* Headline Section with 10x in RED */}
+        <section className="py-24 md:py-32 px-6 md:px-12">
+          <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+            {/* Left: Headline */}
             <motion.div
               initial={{ y: 50, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="lg:col-span-8"
+              transition={{ duration: 0.9 }}
+              className="lg:col-span-7"
             >
-              <h2 className="text-display font-light leading-tight">
-                Building AI-fueled systems that upgrade humans. Market Intelligence at Cognizant by day, AI product builder by night.
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium leading-tight">
+                Building AI-fuelled systems that upgrade humans from 1 to <span className="text-red-600">10x</span>
               </h2>
             </motion.div>
 
-            {/* About Me Circle + Extra Info */}
+            {/* Right: Description + Button */}
             <motion.div
               initial={{ y: 50, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="lg:col-span-4 flex flex-col gap-8"
+              transition={{ duration: 0.9, delay: 0.15 }}
+              className="lg:col-span-5 space-y-8"
             >
-              <div className="flex flex-col gap-4">
-                <p className="text-sm text-muted leading-relaxed">
-                  The combination of my passion for AI, code & product design positions me in a unique place in the tech world.
-                </p>
-                <Link href="/about">
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="btn-circle-large bg-foreground text-background hover:opacity-90 transition-opacity"
-                  >
-                    About me
-                  </motion.div>
-                </Link>
-              </div>
+              <p className="text-base leading-relaxed text-gray-600">
+                By day, I decode global markets. By night, I turn ideas into products that think on their own. I don't just engineer code, I engineer systems that remove incrementally smarter. No nonsense, always on the cutting edge.
+              </p>
+              <Link href="/about">
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="px-8 py-4 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
+                >
+                  About me
+                </motion.button>
+              </Link>
             </motion.div>
           </div>
         </section>
 
-        {/* Recent Work Section */}
-        <section className="section-spacing px-6 md:px-12 lg:px-24 border-t border-border">
-          <div className="max-w-7xl mx-auto">
+        {/* Recent Work */}
+        <section className="py-16 px-6 md:px-12 border-t border-gray-100">
+          <div className="max-w-[1400px] mx-auto">
             <motion.p
-              initial={{ y: 20, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-xs uppercase tracking-widest text-muted mb-16"
+              className="text-xs uppercase tracking-widest text-gray-400 mb-12"
             >
               RECENT WORK
             </motion.p>
 
             <div className="space-y-0">
-              {featuredProjects.slice(0, 3).map((project, index) => (
+              {featuredProjects.slice(0, 5).map((project, index) => (
                 <motion.div
                   key={project.id}
                   initial={{ y: 30, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  transition={{ duration: 0.6, delay: index * 0.08 }}
                 >
                   <Link
                     href={`/work/${project.slug}`}
-                    className="block border-t border-border"
+                    className="block py-6 border-b border-gray-100 hover:bg-gray-50 transition-colors"
                   >
-                    <motion.div
-                      whileHover={{ x: 10 }}
-                      transition={{ duration: 0.3 }}
-                      className="py-12 grid grid-cols-1 md:grid-cols-12 gap-4 items-center hover:opacity-60 transition-opacity"
-                    >
-                      <div className="md:col-span-6">
-                        <h3 className="text-title font-light">{project.title}</h3>
-                      </div>
-                      <div className="md:col-span-6 flex justify-between items-center">
-                        <span className="text-sm text-muted">
-                          {project.services?.[0] || 'AI Development'}
-                        </span>
-                      </div>
-                    </motion.div>
+                    <h3 className="text-3xl md:text-4xl font-light">{project.title}</h3>
                   </Link>
                 </motion.div>
               ))}
             </div>
 
             <motion.div
-              initial={{ y: 20, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="mt-16"
+              transition={{ delay: 0.4 }}
+              className="mt-12 text-center"
             >
-              <Link href="/work">
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="btn-circle bg-foreground text-background inline-flex"
-                >
-                  More work →
-                </motion.div>
+              <Link
+                href="/work"
+                className="inline-block px-8 py-3 border border-gray-200 rounded-full hover:bg-gray-50 transition-colors"
+              >
+                More work
               </Link>
             </motion.div>
           </div>
         </section>
 
-        {/* Dark Footer / CTA Section */}
-        <section className="bg-[#1a1a1a] text-white px-6 md:px-12 lg:px-24 py-32">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-              {/* Left: Photo + Text */}
+        {/* Project Showcase Cards */}
+        <section className="py-16 px-6 md:px-12">
+          <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            {featuredProjects.slice(0, 3).map((project, index) => (
               <motion.div
-                initial={{ x: -50, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
+                key={project.id}
+                initial={{ y: 40, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                className="lg:col-span-6 flex items-center gap-8"
+                transition={{ duration: 0.7, delay: index * 0.1 }}
               >
-                <div className="w-24 h-24 rounded-full bg-gray-600 flex-shrink-0 flex items-center justify-center text-gray-400">
-                  [Photo]
-                </div>
-                <h2 className="text-5xl md:text-6xl lg:text-7xl font-light">
-                  Let's work<br/>together
-                </h2>
-              </motion.div>
-
-              {/* Right: Contact Info + Button */}
-              <motion.div
-                initial={{ x: 50, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="lg:col-span-6 flex flex-col items-start lg:items-end gap-8"
-              >
-                <div className="flex flex-wrap gap-4">
-                  <a href="mailto:abhishaivardhan21@gmail.com" className="badge-pill bg-white/10 text-white hover:bg-white/20 transition-colors">
-                    abhishaivardhan21@gmail.com
-                  </a>
-                  <a href="tel:+918919451220" className="badge-pill bg-white/10 text-white hover:bg-white/20 transition-colors">
-                    +91 89194 51220
-                  </a>
-                </div>
-                <Link href="/contact">
-                  <motion.div
-                    whileHover={{ scale: 1.05, rotate: 5 }}
-                    whileTap={{ scale: 0.95 }}
-                    transition={{ duration: 0.3 }}
-                    className="w-48 h-48 rounded-full bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center text-xl font-light"
-                  >
-                    Get in touch
-                  </motion.div>
+                <Link href={`/work/${project.slug}`}>
+                  <div className="aspect-video bg-gray-900 rounded-lg overflow-hidden hover:scale-[1.02] transition-transform duration-300">
+                    <div className="w-full h-full flex items-center justify-center text-white/40">
+                      Project Screenshot
+                    </div>
+                  </div>
                 </Link>
               </motion.div>
-            </div>
-
-            {/* Bottom Info */}
-            <motion.div
-              initial={{ y: 20, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="mt-32 pt-8 border-t border-white/10 flex flex-wrap justify-between items-center gap-8 text-sm text-gray-400"
-            >
-              <div className="flex gap-12">
-                <div>
-                  <p className="text-xs uppercase mb-1">VERSION</p>
-                  <p>2024 © Edition</p>
-                </div>
-                <div>
-                  <p className="text-xs uppercase mb-1">LOCAL TIME</p>
-                  <LocalTime />
-                </div>
-              </div>
-              <div className="flex gap-6">
-                <a href="https://linkedin.com/in/abhishaivardhan" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                  LinkedIn
-                </a>
-                <a href="https://twitter.com/abhishaiv" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                  Twitter
-                </a>
-                <a href="https://github.com/abhishaiv" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                  GitHub
-                </a>
-                <a href="https://instagram.com/abhishaiv" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                  Instagram
-                </a>
-              </div>
-            </motion.div>
+            ))}
           </div>
         </section>
       </main>
+
+      {/* Dark Footer */}
+      <footer className="bg-[#2b2b2b] text-white px-6 md:px-12 py-20">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+            {/* Left */}
+            <motion.div
+              initial={{ x: -40, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              className="flex items-center gap-6"
+            >
+              <div className="w-20 h-20 rounded-full bg-gray-600 flex-shrink-0" />
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-light">
+                Let's build<br/>something cooler
+              </h2>
+            </motion.div>
+
+            {/* Right */}
+            <motion.div
+              initial={{ x: 40, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              className="flex flex-col lg:items-end gap-6"
+            >
+              <div className="flex flex-wrap gap-4">
+                <a
+                  href="mailto:abhishaivardhan21@gmail.com"
+                  className="px-6 py-3 border border-white/20 rounded-full hover:bg-white/10 transition-colors"
+                >
+                  abhishaivardhan21@gmail.com
+                </a>
+                <a
+                  href="tel:+918919451220"
+                  className="px-6 py-3 border border-white/20 rounded-full hover:bg-white/10 transition-colors"
+                >
+                  +91 8919451220
+                </a>
+              </div>
+              <Link href="/contact">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="w-48 h-48 rounded-full bg-blue-500 flex items-center justify-center text-xl cursor-pointer hover:bg-blue-600 transition-colors"
+                >
+                  Get in touch
+                </motion.div>
+              </Link>
+            </motion.div>
+          </div>
+
+          {/* Socials */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="pt-8 border-t border-white/10"
+          >
+            <p className="text-xs uppercase tracking-wider text-gray-400 mb-4">SOCIALS</p>
+            <div className="flex gap-8 text-sm">
+              <a href="https://linkedin.com/in/abhishaivardhan" className="hover:text-gray-300 transition-colors">Linkedin</a>
+              <a href="https://github.com/abhishaiv" className="hover:text-gray-300 transition-colors">Github</a>
+              <a href="https://twitter.com/abhishaiv" className="hover:text-gray-300 transition-colors">Twitter</a>
+              <a href="https://instagram.com/abhishaiv" className="hover:text-gray-300 transition-colors">Instagram</a>
+            </div>
+          </motion.div>
+        </div>
+      </footer>
     </>
   );
 }

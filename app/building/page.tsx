@@ -2,9 +2,8 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { allProjects } from '@/lib/projects';
 
-export default function WorkPage() {
+export default function BuildingPage() {
   return (
     <>
       {/* Navigation */}
@@ -34,71 +33,72 @@ export default function WorkPage() {
       </nav>
 
       {/* Main Content */}
-      <main className="min-h-screen bg-white pt-32 px-6 md:px-12 py-16">
-        <div className="max-w-[1400px] mx-auto">
-          {/* Header */}
+      <main className="min-h-screen bg-black text-white pt-32">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-16">
+          {/* Header with Logo */}
           <motion.div
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className="mb-16"
+            className="flex items-center gap-4 mb-16"
           >
-            <h1 className="text-5xl md:text-6xl font-medium mb-4">Products I Built</h1>
-            <p className="text-xl text-gray-500">Night Mode Activated</p>
+            <div className="w-16 h-16 rounded-full bg-pink-400 flex items-center justify-center text-black text-2xl font-bold">
+              N
+            </div>
+            <h1 className="text-4xl md:text-5xl font-medium">Nexaflow Studios</h1>
           </motion.div>
 
-          {/* Table */}
-          <div className="mb-16">
-            {/* Table Header */}
-            <div className="grid grid-cols-12 gap-6 pb-6 border-b border-gray-200 text-sm uppercase tracking-wider text-gray-500">
-              <div className="col-span-5">NAME</div>
-              <div className="col-span-4">CATEGORY</div>
-              <div className="col-span-3 text-right">YEAR</div>
-            </div>
-
-            {/* Table Rows */}
-            {allProjects.map((project, index) => (
-              <motion.div
-                key={project.id}
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-              >
-                <Link href={`/work/${project.slug}`}>
-                  <div className="grid grid-cols-12 gap-6 py-8 border-b border-gray-100 hover:bg-gray-50 transition-colors">
-                    <div className="col-span-5">
-                      <h3 className="text-3xl md:text-4xl font-light">{project.title}</h3>
-                    </div>
-                    <div className="col-span-4 flex items-center">
-                      <p className="text-base text-gray-600">
-                        {project.category === 'both' ? 'Productivity' :
-                         project.category === 'design' ? 'Design' :
-                         project.category === 'development' ? 'Development' :
-                         project.services?.[0] || 'Productivity'}
-                      </p>
-                    </div>
-                    <div className="col-span-3 flex items-center justify-end">
-                      <p className="text-base text-gray-600">{project.year || '2025'}</p>
-                    </div>
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* About Projects Button */}
+          {/* Description */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6 }}
-            className="text-center"
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="max-w-3xl space-y-6 mb-12"
           >
-            <Link
-              href="/about"
-              className="inline-block px-8 py-3 border border-gray-200 rounded-full hover:bg-gray-50 transition-colors"
-            >
-              About Projects
-            </Link>
+            <p className="text-xl md:text-2xl leading-relaxed">
+              We build AI systems that make teams faster, sharper, and 10x more effective.
+            </p>
+            <p className="text-xl md:text-2xl leading-relaxed">
+              Nexaflow Studios is the small, obsessive AI team I run on the side.
+            </p>
+            <p className="text-xl md:text-2xl leading-relaxed">
+              We help companies automate the work humans shouldn't be doing and amplify the work only humans can do.
+            </p>
+          </motion.div>
+
+          {/* Philosophy */}
+          <motion.div
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="max-w-3xl space-y-6 mb-12"
+          >
+            <h2 className="text-2xl font-medium">Our philosophy</h2>
+            <p className="text-lg leading-relaxed text-gray-300">
+              AI should remove friction, not create more tools to manage.
+            </p>
+            <p className="text-lg leading-relaxed text-gray-300">
+              We design bespoke systems that think, adapt, and compound productivity at scale.
+            </p>
+          </motion.div>
+
+          {/* Link */}
+          <motion.div
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            <p className="text-lg">
+              To know more:{' '}
+              <a
+                href="https://nexaflowstudios.in"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:text-blue-300 transition-colors underline"
+              >
+                nexaflowstudios.in
+              </a>
+            </p>
           </motion.div>
         </div>
       </main>
