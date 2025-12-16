@@ -1,8 +1,8 @@
 'use client';
 
 import { useState, FormEvent } from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
-import TopNav from '@/components/TopNav';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -19,7 +19,6 @@ export default function ContactPage() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
     try {
       await new Promise((resolve) => setTimeout(resolve, 1500));
       setSubmitStatus('success');
@@ -47,261 +46,194 @@ export default function ContactPage() {
 
   return (
     <>
-      <TopNav />
-      <main className="min-h-screen bg-[#1a1a1a] text-[#f5f5f5]">
-        {/* Hero Section with Headline + Photo */}
-        <section className="px-6 md:px-12 lg:px-24 pt-32 pb-16">
-          <div className="max-w-7xl mx-auto">
-            <div className="flex items-center justify-between">
-              <motion.h1
-                initial={{ y: 40, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.8 }}
-                className="text-6xl md:text-7xl lg:text-8xl font-light leading-tight max-w-3xl"
-              >
-                Let's start a<br/>
-                project<br/>
-                together
-              </motion.h1>
-              <motion.div
-                initial={{ scale: 0, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ delay: 0.4, duration: 0.6, type: "spring" }}
-                className="hidden lg:block w-32 h-32 rounded-full bg-gray-600 flex-shrink-0 overflow-hidden"
-              >
-                <div className="w-full h-full flex items-center justify-center text-gray-400">
-                  [Photo]
-                </div>
-              </motion.div>
-            </div>
+      {/* Navigation */}
+      <nav className="fixed top-0 left-0 right-0 bg-[#2b2b2b] border-b border-white/10 z-50">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-6 flex justify-between items-center">
+          <Link href="/" className="text-base font-medium text-white">
+            Build with Abhishai
+          </Link>
+          <div className="flex gap-8 items-center text-white">
+            <Link href="/building" className="text-sm hover:opacity-60 transition-opacity">
+              Building
+            </Link>
+            <Link href="/work" className="text-sm hover:opacity-60 transition-opacity">
+              Projects
+            </Link>
+            <Link href="/about" className="text-sm hover:opacity-60 transition-opacity">
+              About
+            </Link>
+            <Link
+              href="/contact"
+              className="text-sm px-6 py-2 border border-white rounded-md hover:bg-white hover:text-black transition-colors"
+            >
+              Contact
+            </Link>
           </div>
-        </section>
+        </div>
+      </nav>
 
-        {/* Main Content: Form + Sidebar */}
-        <section className="px-6 md:px-12 lg:px-24 pb-32">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-              {/* Left Side: Contact Form */}
-              <motion.div
-                initial={{ x: -30, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ delay: 0.3, duration: 0.8 }}
-                className="lg:col-span-7"
-              >
-                <form onSubmit={handleSubmit} className="space-y-12">
-                  {/* Field 01 - Name */}
-                  <div>
-                    <label htmlFor="name" className="block text-sm text-gray-500 mb-4">
-                      01
-                    </label>
-                    <div>
-                      <p className="text-xl mb-4">What's your name?</p>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                        className="w-full bg-transparent border-b border-gray-700 pb-3 text-lg text-gray-400 placeholder-gray-600 focus:outline-none focus:border-gray-500 transition-colors"
-                        placeholder="John Doe *"
-                      />
-                    </div>
-                  </div>
+      <main className="min-h-screen bg-[#2b2b2b] text-white pt-32">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-16">
+          {/* Header Section */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20">
+            {/* Left: Headline */}
+            <motion.div
+              initial={{ x: -40, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.8 }}
+              className="lg:col-span-7"
+            >
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-light leading-tight">
+                Let's Build<br/>
+                Something<br/>
+                Cooler Together
+              </h1>
+            </motion.div>
 
-                  {/* Field 02 - Email */}
-                  <div>
-                    <label htmlFor="email" className="block text-sm text-gray-500 mb-4">
-                      02
-                    </label>
-                    <div>
-                      <p className="text-xl mb-4">What's your email?</p>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        className="w-full bg-transparent border-b border-gray-700 pb-3 text-lg text-gray-400 placeholder-gray-600 focus:outline-none focus:border-gray-500 transition-colors"
-                        placeholder="john@doe.com *"
-                      />
-                    </div>
-                  </div>
+            {/* Right: Photo + Contact Details */}
+            <motion.div
+              initial={{ x: 40, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="lg:col-span-5 space-y-8"
+            >
+              {/* Profile Photo */}
+              <div className="w-32 h-32 rounded-full bg-gray-600" />
 
-                  {/* Field 03 - Organization */}
-                  <div>
-                    <label htmlFor="organization" className="block text-sm text-gray-500 mb-4">
-                      03
-                    </label>
-                    <div>
-                      <p className="text-xl mb-4">What's the name of your organization?</p>
-                      <input
-                        type="text"
-                        id="organization"
-                        name="organization"
-                        value={formData.organization}
-                        onChange={handleChange}
-                        className="w-full bg-transparent border-b border-gray-700 pb-3 text-lg text-gray-400 placeholder-gray-600 focus:outline-none focus:border-gray-500 transition-colors"
-                        placeholder="John & Doe ®"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Field 04 - Services */}
-                  <div>
-                    <label htmlFor="services" className="block text-sm text-gray-500 mb-4">
-                      04
-                    </label>
-                    <div>
-                      <p className="text-xl mb-4">What services are you looking for?</p>
-                      <input
-                        type="text"
-                        id="services"
-                        name="services"
-                        value={formData.services}
-                        onChange={handleChange}
-                        className="w-full bg-transparent border-b border-gray-700 pb-3 text-lg text-gray-400 placeholder-gray-600 focus:outline-none focus:border-gray-500 transition-colors"
-                        placeholder="Web Design, Web Development ..."
-                      />
-                    </div>
-                  </div>
-
-                  {/* Field 05 - Message */}
-                  <div>
-                    <label htmlFor="message" className="block text-sm text-gray-500 mb-4">
-                      05
-                    </label>
-                    <div>
-                      <p className="text-xl mb-4">Your message</p>
-                      <textarea
-                        id="message"
-                        name="message"
-                        value={formData.message}
-                        onChange={handleChange}
-                        rows={4}
-                        className="w-full bg-transparent border-b border-gray-700 pb-3 text-lg text-gray-400 placeholder-gray-600 focus:outline-none focus:border-gray-500 transition-colors resize-none"
-                        placeholder="Hello Dennis, can you help me with ... *"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Submit Button */}
-                  <div className="pt-12 flex justify-center">
-                    <motion.button
-                      type="submit"
-                      disabled={isSubmitting}
-                      whileHover={{ scale: 1.05, rotate: 5 }}
-                      whileTap={{ scale: 0.95 }}
-                      transition={{ duration: 0.3 }}
-                      className="w-48 h-48 rounded-full bg-blue-600 hover:bg-blue-700 text-white text-xl font-light disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
-                      {isSubmitting ? 'Sending...' : 'Send it!'}
-                    </motion.button>
-                  </div>
-
-                  {/* Status Messages */}
-                  {submitStatus === 'success' && (
-                    <p className="text-center text-green-400">
-                      ✓ Message sent successfully!
-                    </p>
-                  )}
-                  {submitStatus === 'error' && (
-                    <p className="text-center text-red-400">
-                      ✗ Something went wrong. Please try again.
-                    </p>
-                  )}
-                </form>
-              </motion.div>
-
-              {/* Right Side: Contact Details Sidebar */}
-              <motion.div
-                initial={{ x: 30, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ delay: 0.5, duration: 0.8 }}
-                className="lg:col-span-5 space-y-12"
-              >
-                {/* Contact Details */}
-                <div>
-                  <p className="text-xs text-gray-500 uppercase tracking-wider mb-4">CONTACT DETAILS</p>
-                  <div className="space-y-2">
-                    <p className="text-sm">abhishaivardhan21@gmail.com</p>
-                    <p className="text-sm">+31 6 27 84 74 30</p>
-                  </div>
-                </div>
-
-                {/* Business Details */}
-                <div>
-                  <p className="text-xs text-gray-500 uppercase tracking-wider mb-4">BUSINESS DETAILS</p>
-                  <div className="space-y-1 text-sm">
-                    <p>Abhishai Vardhan</p>
-                    <p>Based in India</p>
-                    <p>Location: India</p>
-                  </div>
-                </div>
-
-                {/* Socials */}
-                <div>
-                  <p className="text-xs text-gray-500 uppercase tracking-wider mb-4">SOCIALS</p>
-                  <div className="space-y-2">
-                    <a
-                      href="https://linkedin.com/in/abhishaivardhan"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block text-sm hover:text-gray-300 transition-colors"
-                    >
-                      LinkedIn
-                    </a>
-                    <a
-                      href="https://twitter.com/abhishaiv"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block text-sm hover:text-gray-300 transition-colors"
-                    >
-                      Twitter
-                    </a>
-                    <a
-                      href="https://instagram.com/abhishaiv"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block text-sm hover:text-gray-300 transition-colors"
-                    >
-                      Instagram
-                    </a>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* Footer */}
-        <footer className="px-6 md:px-12 lg:px-24 py-12 border-t border-gray-800">
-          <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-8 text-sm">
-            <div>
-              <p className="text-gray-500 mb-2">VERSION</p>
-              <p>2024 © Edition</p>
-            </div>
-            <div>
-              <p className="text-gray-500 mb-2">LOCAL TIME</p>
-              <p>IST</p>
-            </div>
-            <div>
-              <p className="text-gray-500 mb-2">SOCIALS</p>
-              <div className="flex gap-6">
-                <a href="https://linkedin.com/in/abhishaivardhan" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300 transition-colors">
-                  LinkedIn
-                </a>
-                <a href="https://twitter.com/abhishaiv" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300 transition-colors">
-                  Twitter
-                </a>
-                <a href="https://instagram.com/abhishaiv" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300 transition-colors">
-                  Instagram
-                </a>
+              {/* Contact Details */}
+              <div>
+                <p className="text-xs uppercase tracking-wider text-gray-400 mb-3">CONTACT DETAILS</p>
+                <p className="text-sm mb-2">abhishaivardhan21@gmail.com</p>
+                <p className="text-sm">+91 8919451220</p>
               </div>
-            </div>
+
+              {/* Business Details */}
+              <div>
+                <p className="text-xs uppercase tracking-wider text-gray-400 mb-3">BUSINESS DETAILS</p>
+                <p className="text-sm mb-1">nexaflowstudios.in</p>
+                <p className="text-sm">Location: INDIA</p>
+              </div>
+            </motion.div>
           </div>
-        </footer>
+
+          {/* Contact Form */}
+          <motion.form
+            initial={{ y: 40, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            onSubmit={handleSubmit}
+            className="max-w-4xl space-y-12"
+          >
+            {/* Field 01 - Name */}
+            <div className="border-b border-gray-600 pb-6">
+              <label className="block text-sm text-gray-500 mb-4">01</label>
+              <p className="text-2xl mb-4">Name</p>
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                placeholder="John Doe*"
+                className="w-full bg-transparent border-none text-lg text-gray-400 placeholder-gray-600 focus:outline-none"
+              />
+            </div>
+
+            {/* Field 02 - Email */}
+            <div className="border-b border-gray-600 pb-6">
+              <label className="block text-sm text-gray-500 mb-4">02</label>
+              <p className="text-2xl mb-4">E-mail</p>
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                placeholder="johndoe@gmail.com*"
+                className="w-full bg-transparent border-none text-lg text-gray-400 placeholder-gray-600 focus:outline-none"
+              />
+            </div>
+
+            {/* Field 03 - Organization */}
+            <div className="border-b border-gray-600 pb-6">
+              <label className="block text-sm text-gray-500 mb-4">03</label>
+              <p className="text-2xl mb-4">Name of the Organisation</p>
+              <input
+                type="text"
+                name="organization"
+                value={formData.organization}
+                onChange={handleChange}
+                placeholder="John & Doe"
+                className="w-full bg-transparent border-none text-lg text-gray-400 placeholder-gray-600 focus:outline-none"
+              />
+            </div>
+
+            {/* Field 04 - Services */}
+            <div className="border-b border-gray-600 pb-6">
+              <label className="block text-sm text-gray-500 mb-4">04</label>
+              <p className="text-2xl mb-4">Services you are looking for</p>
+              <input
+                type="text"
+                name="services"
+                value={formData.services}
+                onChange={handleChange}
+                placeholder="Smart Chatbots, AI infused Website Development ..."
+                className="w-full bg-transparent border-none text-lg text-gray-400 placeholder-gray-600 focus:outline-none"
+              />
+            </div>
+
+            {/* Field 05 - Message */}
+            <div className="border-b border-gray-600 pb-6">
+              <label className="block text-sm text-gray-500 mb-4">05</label>
+              <p className="text-2xl mb-4">Your message</p>
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                rows={4}
+                placeholder="Hello Abhishai, Can you help me with ..."
+                className="w-full bg-transparent border-none text-lg text-gray-400 placeholder-gray-600 focus:outline-none resize-none"
+              />
+            </div>
+
+            {/* Submit Button */}
+            <div className="flex justify-center pt-12">
+              <motion.button
+                type="submit"
+                disabled={isSubmitting}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="w-56 h-56 rounded-full bg-blue-500 hover:bg-blue-600 text-white text-2xl font-light transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isSubmitting ? 'Sending...' : 'Get in touch'}
+              </motion.button>
+            </div>
+
+            {/* Status Messages */}
+            {submitStatus === 'success' && (
+              <p className="text-center text-green-400">✓ Message sent successfully!</p>
+            )}
+            {submitStatus === 'error' && (
+              <p className="text-center text-red-400">✗ Something went wrong. Please try again.</p>
+            )}
+          </motion.form>
+
+          {/* Socials */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8 }}
+            className="mt-24 pt-12 border-t border-white/10"
+          >
+            <p className="text-xs uppercase tracking-wider text-gray-400 mb-4">SOCIALS</p>
+            <div className="flex gap-8 text-sm">
+              <a href="https://linkedin.com/in/abhishaivardhan" className="hover:text-gray-300 transition-colors">Linkedin</a>
+              <a href="https://github.com/abhishaiv" className="hover:text-gray-300 transition-colors">Github</a>
+              <a href="https://twitter.com/abhishaiv" className="hover:text-gray-300 transition-colors">Twitter</a>
+              <a href="https://instagram.com/abhishaiv" className="hover:text-gray-300 transition-colors">Instagram</a>
+            </div>
+          </motion.div>
+        </div>
       </main>
     </>
   );
