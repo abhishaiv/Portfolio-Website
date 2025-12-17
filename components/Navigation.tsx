@@ -14,7 +14,7 @@ export default function Navigation({ theme = 'light' }: NavigationProps) {
   return (
     <nav className="fixed top-6 left-6 right-6 z-50">
       <div className="max-w-[1400px] mx-auto bg-white backdrop-blur-md rounded-full shadow-lg">
-        <div className="px-8 py-5 flex justify-between items-center">
+        <div className="px-8 py-3.5 flex justify-between items-center">
           <Link href="/" className="text-base font-normal text-black">
             Build with Abhishai
           </Link>

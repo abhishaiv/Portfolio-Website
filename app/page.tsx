@@ -65,7 +65,7 @@ export default function Home() {
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 1, duration: 1.1, ease: [0.6, 0.05, 0.01, 0.9] }}
-          className="absolute bottom-12 md:bottom-16 left-16 z-10"
+          className="absolute bottom-8 left-16 z-10"
         >
           <h1 className="text-[56px] font-light text-white leading-none">
             Abhishai Vardhan
@@ -155,7 +155,7 @@ export default function Home() {
                 >
                   <Link
                     href={`/work/${project.slug}`}
-                    className="block py-7 border-b border-gray-200 hover:opacity-70 transition-all"
+                    className="block py-8 border-b border-gray-200 hover:opacity-70 transition-all"
                   >
                     <h3 className="text-[22px] font-light">{project.title}</h3>
                   </Link>
@@ -181,8 +181,8 @@ export default function Home() {
         </section>
 
         {/* Project Showcase Cards */}
-        <section className="py-12 md:py-16 px-16 bg-[#f5f5f6]">
-          <div className="max-w-[1400px] mx-auto py-12 md:py-16">
+        <section className="py-12 px-16 bg-[#f5f5f6]">
+          <div className="max-w-[1400px] mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {featuredProjects.slice(0, 3).map((project, index) => (
                 <motion.div
