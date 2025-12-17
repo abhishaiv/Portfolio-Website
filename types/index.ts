@@ -11,7 +11,7 @@ export interface Project {
   year?: number;
   location?: string;
   services?: string[];
-  category?: 'design' | 'development' | 'both';
+  category?: 'design' | 'development' | 'both' | 'productivity' | 'sports-intelligence' | 'health-tech' | 'service-orchestration';
   slug?: string;
 }
 

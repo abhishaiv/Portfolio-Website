@@ -88,78 +88,97 @@ export default function AboutPage() {
               initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
-              className="text-3xl font-medium mb-12"
+              className="text-3xl font-medium mb-16"
             >
               Professional Timeline
             </motion.h2>
 
-            <div className="space-y-12">
-              {[
-                {
-                  years: "2025 - Current",
-                  title: "Market Intelligence (Courier, Express and Parcel Market)",
-                  company: "Cognizant",
-                  points: [
-                    "Analysed data across 50+ countries (CEP Market) to create earnings reports, map macro shifts, and build demand models to benchmark competitors.",
-                    "Strategic dashboards & infographics for enterprise leadership",
-                    "Earnings intelligence from 8-Ks, 10-Qs, annual reports"
-                  ]
-                },
-                {
-                  years: "23 - 25",
-                  title: "Pre-Sales (Energy And Utilities)",
-                  company: "Cognizant",
-                  points: [
-                    "Built high-stakes proposals for the Energy & Utilities sector. Designed solutions, priced offers, and stacked pitches that won. We secured $24M+ annual revenue by aligning tech solutions with business needs & tweaking go-to-market angles."
-                  ]
-                },
-                {
-                  years: "21 - 23",
-                  title: "MBA (International Business)",
-                  company: "",
-                  points: [
-                    "Achievements & Recognition:",
-                    "National Semi-finalist — Boat Wave-makers Challenge",
-                    "National Semi-finalist — JSW Case Competition"
-                  ]
-                },
-                {
-                  years: "20 - 21",
-                  title: "Business Development Executive",
-                  company: "GeorgePrep",
-                  points: [
-                    "Acquired clients, designed subscription plans, and partnered with educators for growth. Learned early that early-stage sales is just problem math — identify value, then price it."
-                  ]
-                },
-                {
-                  years: "2015 - 19",
-                  title: "B.Tech. (Mechanical Engineering)",
-                  company: "",
-                  points: []
-                }
-              ].map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ x: -30, opacity: 0 }}
-                  whileInView={{ x: 0, opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="grid grid-cols-12 gap-6"
-                >
-                  <div className="col-span-3 text-sm font-medium">{item.years}</div>
-                  <div className="col-span-9">
-                    <h3 className="text-xl font-medium mb-2">{item.title}</h3>
-                    {item.company && <p className="text-gray-600 mb-4">{item.company}</p>}
-                    {item.points.length > 0 && (
-                      <ul className="space-y-2 text-gray-600">
-                        {item.points.map((point, i) => (
-                          <li key={i} className="text-sm leading-relaxed">• {point}</li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-                </motion.div>
-              ))}
+            {/* Vertical Timeline Container */}
+            <div className="relative pl-0 md:pl-32">
+              {/* Vertical timeline line (hidden on mobile) */}
+              <div className="hidden md:block absolute left-16 top-4 bottom-0 w-px bg-gray-200" />
+
+              {/* Timeline entries */}
+              <div className="space-y-16">
+                {[
+                  {
+                    years: "2025 - Current",
+                    title: "Market Intelligence (Courier, Express and Parcel Market)",
+                    company: "Cognizant",
+                    points: [
+                      "Analysed data across 50+ countries (CEP Market) to create earnings reports, map macro shifts, and build demand models to benchmark competitors.",
+                      "Strategic dashboards & infographics for enterprise leadership",
+                      "Earnings intelligence from 8-Ks, 10-Qs, annual reports"
+                    ]
+                  },
+                  {
+                    years: "23 - 25",
+                    title: "Pre-Sales (Energy And Utilities)",
+                    company: "Cognizant",
+                    points: [
+                      "Built high-stakes proposals for the Energy & Utilities sector. Designed solutions, priced offers, and stacked pitches that won. We secured $24M+ annual revenue by aligning tech solutions with business needs & tweaking go-to-market angles."
+                    ]
+                  },
+                  {
+                    years: "21 - 23",
+                    title: "MBA (International Business)",
+                    company: "",
+                    points: [
+                      "Achievements & Recognition:",
+                      "National Semi-finalist — Boat Wave-makers Challenge",
+                      "National Semi-finalist — JSW Case Competition"
+                    ]
+                  },
+                  {
+                    years: "20 - 21",
+                    title: "Business Development Executive",
+                    company: "GeorgePrep",
+                    points: [
+                      "Acquired clients, designed subscription plans, and partnered with educators for growth. Learned early that early-stage sales is just problem math — identify value, then price it."
+                    ]
+                  },
+                  {
+                    years: "2015 - 19",
+                    title: "B.Tech. (Mechanical Engineering)",
+                    company: "",
+                    points: []
+                  }
+                ].map((item, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ x: -30, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    className="relative"
+                  >
+                    {/* Year marker on left (desktop) */}
+                    <div className="hidden md:block absolute -left-32 top-0 w-24">
+                      {/* Bullet point */}
+                      <div className="absolute left-[88px] top-1 w-3 h-3 rounded-full bg-blue-500 border-2 border-white shadow-sm" />
+                      <p className="text-sm font-medium text-gray-700">{item.years}</p>
+                    </div>
+
+                    {/* Year marker for mobile */}
+                    <div className="md:hidden mb-3">
+                      <p className="text-sm font-medium text-gray-700">{item.years}</p>
+                    </div>
+
+                    {/* Content */}
+                    <div>
+                      <h3 className="text-xl font-medium mb-2">{item.title}</h3>
+                      {item.company && <p className="text-gray-600 mb-4">{item.company}</p>}
+                      {item.points.length > 0 && (
+                        <ul className="space-y-2 text-gray-600">
+                          {item.points.map((point, i) => (
+                            <li key={i} className="text-sm leading-relaxed">• {point}</li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </div>
         </section>

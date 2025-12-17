@@ -49,10 +49,14 @@ export default function WorkPage() {
                     </div>
                     <div className="col-span-4 flex items-center">
                       <p className="text-base text-gray-600">
-                        {project.category === 'both' ? 'Productivity' :
+                        {project.category === 'productivity' ? 'Productivity' :
+                         project.category === 'sports-intelligence' ? 'Sports Intelligence' :
+                         project.category === 'health-tech' ? 'Health Tech' :
+                         project.category === 'service-orchestration' ? 'Service Orchestration' :
+                         project.category === 'both' ? 'Design & Development' :
                          project.category === 'design' ? 'Design' :
                          project.category === 'development' ? 'Development' :
-                         project.services?.[0] || 'Productivity'}
+                         'Other'}
                       </p>
                     </div>
                     <div className="col-span-3 flex items-center justify-end">

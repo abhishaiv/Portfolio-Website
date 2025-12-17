@@ -14,13 +14,20 @@ export default function Home() {
       <Navigation theme="light" />
 
       {/* Hero Section */}
-      <section className="relative h-screen bg-gray-400 overflow-hidden">
-        <motion.div
-          initial={{ scale: 1.05, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1.2, ease: [0.6, 0.05, 0.01, 0.9] }}
-          className="absolute inset-0 bg-gradient-to-br from-gray-300 to-gray-500"
+      <section className="relative h-screen overflow-hidden">
+        {/* Professional Photo Background */}
+        <Image
+          src="/images/portfolio/hero.jpg"
+          alt="Abhishai Vardhan - AI Builder"
+          fill
+          priority
+          className="object-cover object-center"
+          quality={95}
+          sizes="100vw"
         />
+
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-black/30 z-[1]" />
 
         {/* Located in India Badge */}
         <motion.div
