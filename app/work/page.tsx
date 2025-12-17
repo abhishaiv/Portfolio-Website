@@ -12,7 +12,7 @@ export default function WorkPage() {
       <Navigation theme="light" />
 
       {/* Main Content */}
-      <main className="min-h-screen bg-white pt-32 px-6 md:px-12 py-16">
+      <main className="min-h-screen bg-white pt-32 px-6 md:px-12 py-24">
         <div className="max-w-[1400px] mx-auto">
           {/* Header */}
           <motion.div
@@ -29,9 +29,9 @@ export default function WorkPage() {
           <div className="mb-16">
             {/* Table Header */}
             <div className="grid grid-cols-12 gap-6 pb-6 border-b border-gray-200 text-sm uppercase tracking-wider text-gray-500">
-              <div className="col-span-5">NAME</div>
+              <div className="col-span-6">NAME</div>
               <div className="col-span-4">CATEGORY</div>
-              <div className="col-span-3 text-right">YEAR</div>
+              <div className="col-span-2 text-right">YEAR</div>
             </div>
 
             {/* Table Rows */}
@@ -44,7 +44,7 @@ export default function WorkPage() {
               >
                 <Link href={`/work/${project.slug}`}>
                   <div className="grid grid-cols-12 gap-6 py-8 border-b border-gray-100 hover:bg-gray-50 transition-colors">
-                    <div className="col-span-5">
+                    <div className="col-span-6">
                       <h3 className="text-3xl md:text-4xl font-light">{project.title}</h3>
                     </div>
                     <div className="col-span-4 flex items-center">
@@ -59,7 +59,7 @@ export default function WorkPage() {
                          'Other'}
                       </p>
                     </div>
-                    <div className="col-span-3 flex items-center justify-end">
+                    <div className="col-span-2 flex items-center justify-end">
                       <p className="text-base text-gray-600">{project.year || '2025'}</p>
                     </div>
                   </div>

@@ -12,7 +12,7 @@ export default function AboutPage() {
 
       <main className="min-h-screen bg-white pt-32">
         {/* Hero Section with Headline */}
-        <section className="px-6 md:px-12 py-16 border-b border-gray-100">
+        <section className="px-6 md:px-12 py-24 border-b border-gray-100">
           <div className="max-w-[1400px] mx-auto">
             <div className="flex items-start justify-between gap-12">
               <motion.h1
@@ -42,7 +42,7 @@ export default function AboutPage() {
         </section>
 
         {/* What I Do */}
-        <section className="px-6 md:px-12 py-16 border-b border-gray-100">
+        <section className="px-6 md:px-12 py-24 border-b border-gray-100">
           <div className="max-w-[1400px] mx-auto">
             <motion.h2
               initial={{ y: 20, opacity: 0 }}
@@ -82,7 +82,7 @@ export default function AboutPage() {
         </section>
 
         {/* Professional Timeline */}
-        <section className="px-6 md:px-12 py-16 border-b border-gray-100">
+        <section className="px-6 md:px-12 py-24 border-b border-gray-100">
           <div className="max-w-[1400px] mx-auto">
             <motion.h2
               initial={{ y: 20, opacity: 0 }}
@@ -184,7 +184,7 @@ export default function AboutPage() {
         </section>
 
         {/* My Skill Set */}
-        <section className="px-6 md:px-12 py-16 border-b border-gray-100">
+        <section className="px-6 md:px-12 py-24 border-b border-gray-100">
           <div className="max-w-[1400px] mx-auto">
             <motion.h2
               initial={{ y: 20, opacity: 0 }}
@@ -223,7 +223,7 @@ export default function AboutPage() {
         </section>
 
         {/* My Why */}
-        <section className="px-6 md:px-12 py-16">
+        <section className="px-6 md:px-12 py-24">
           <div className="max-w-[1400px] mx-auto">
             <motion.h2
               initial={{ y: 20, opacity: 0 }}

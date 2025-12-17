@@ -14,11 +14,12 @@ export default function Navigation({ theme = 'light' }: NavigationProps) {
   const isDark = theme === 'dark';
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 ${isDark ? 'bg-[#2b2b2b] border-white/10' : 'bg-white border-gray-100'} border-b z-50`}>
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-6 flex justify-between items-center">
-        <Link href="/" className={`text-base font-medium ${isDark ? 'text-white' : 'text-black'}`}>
-          Build with Abhishai
-        </Link>
+    <nav className="fixed top-6 left-6 right-6 z-50">
+      <div className={`max-w-[1400px] mx-auto ${isDark ? 'bg-[#2b2b2b]/95 border-white/10' : 'bg-white/95 border-gray-100'} backdrop-blur-md rounded-2xl shadow-sm border`}>
+        <div className="px-6 md:px-12 py-6 flex justify-between items-center">
+          <Link href="/" className={`text-base font-medium ${isDark ? 'text-white' : 'text-black'}`}>
+            Build with Abhishai
+          </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex gap-8 items-center">
@@ -81,19 +82,19 @@ export default function Navigation({ theme = 'light' }: NavigationProps) {
             )}
           </svg>
         </button>
-      </div>
+        </div>
 
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className={`md:hidden overflow-hidden ${isDark ? 'bg-[#2b2b2b]' : 'bg-white'} border-t ${isDark ? 'border-white/10' : 'border-gray-100'}`}
-          >
-            <div className="px-6 py-6 flex flex-col gap-6">
+        {/* Mobile Menu */}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+              className={`md:hidden overflow-hidden border-t ${isDark ? 'border-white/10' : 'border-gray-100'}`}
+            >
+              <div className="px-6 py-6 flex flex-col gap-6">
               <Link
                 href="/building"
                 onClick={() => setIsOpen(false)}
@@ -126,10 +127,11 @@ export default function Navigation({ theme = 'light' }: NavigationProps) {
               >
                 Contact
               </Link>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     </nav>
   );
 }

@@ -51,7 +51,7 @@ export default function ContactPage() {
       <Navigation theme="dark" />
 
       <main className="min-h-screen bg-[#2b2b2b] text-white pt-32">
-        <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-16">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-24">
           {/* Header Section */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20">
             {/* Left: Headline */}

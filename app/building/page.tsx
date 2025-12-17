@@ -12,7 +12,7 @@ export default function BuildingPage() {
 
       {/* Main Content */}
       <main className="min-h-screen bg-black text-white pt-32">
-        <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-16">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-24">
           {/* Header with Logo */}
           <motion.div
             initial={{ y: 30, opacity: 0 }}

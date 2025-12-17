@@ -133,7 +133,7 @@ export default function Home() {
         </section>
 
         {/* Recent Work */}
-        <section className="py-16 px-6 md:px-12 border-t border-gray-100">
+        <section className="py-24 px-6 md:px-12 border-t border-gray-100">
           <div className="max-w-[1400px] mx-auto">
             <motion.p
               initial={{ opacity: 0 }}
@@ -181,7 +181,7 @@ export default function Home() {
         </section>
 
         {/* Project Showcase Cards */}
-        <section className="py-16 px-6 md:px-12">
+        <section className="py-24 px-6 md:px-12">
           <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
             {featuredProjects.slice(0, 3).map((project, index) => (
               <motion.div
