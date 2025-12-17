@@ -11,13 +11,11 @@ interface NavigationProps {
 export default function Navigation({ theme = 'light' }: NavigationProps) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const isDark = theme === 'dark';
-
   return (
     <nav className="fixed top-6 left-6 right-6 z-50">
-      <div className={`max-w-[1400px] mx-auto ${isDark ? 'bg-[#2b2b2b]/95 border-white/10' : 'bg-white/95 border-gray-100'} backdrop-blur-md rounded-2xl shadow-sm border`}>
+      <div className="max-w-[1400px] mx-auto bg-white/95 backdrop-blur-md rounded-2xl shadow-lg border border-gray-100">
         <div className="px-6 md:px-12 py-6 flex justify-between items-center">
-          <Link href="/" className={`text-base font-medium ${isDark ? 'text-white' : 'text-black'}`}>
+          <Link href="/" className="text-base font-medium text-black">
             Build with Abhishai
           </Link>
 
@@ -25,29 +23,25 @@ export default function Navigation({ theme = 'light' }: NavigationProps) {
         <div className="hidden md:flex gap-8 items-center">
           <Link
             href="/building"
-            className={`text-sm hover:opacity-60 transition-opacity ${isDark ? 'text-white' : 'text-black'}`}
+            className="text-sm text-black hover:opacity-60 transition-opacity"
           >
             Building
           </Link>
           <Link
             href="/work"
-            className={`text-sm hover:opacity-60 transition-opacity ${isDark ? 'text-white' : 'text-black'}`}
+            className="text-sm text-black hover:opacity-60 transition-opacity"
           >
             Projects
           </Link>
           <Link
             href="/about"
-            className={`text-sm hover:opacity-60 transition-opacity ${isDark ? 'text-white' : 'text-black'}`}
+            className="text-sm text-black hover:opacity-60 transition-opacity"
           >
             About
           </Link>
           <Link
             href="/contact"
-            className={`text-sm px-6 py-2 border rounded-md transition-colors ${
-              isDark
-                ? 'border-white text-white hover:bg-white hover:text-black'
-                : 'border-black text-black hover:bg-black hover:text-white'
-            }`}
+            className="text-sm px-6 py-2 border border-black text-black rounded-md hover:bg-black hover:text-white transition-colors"
           >
             Contact
           </Link>
@@ -56,7 +50,7 @@ export default function Navigation({ theme = 'light' }: NavigationProps) {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className={`md:hidden p-2 ${isDark ? 'text-white' : 'text-black'}`}
+          className="md:hidden p-2 text-black"
           aria-label="Toggle menu"
         >
           <svg
@@ -92,38 +86,34 @@ export default function Navigation({ theme = 'light' }: NavigationProps) {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className={`md:hidden overflow-hidden border-t ${isDark ? 'border-white/10' : 'border-gray-100'}`}
+              className="md:hidden overflow-hidden border-t border-gray-100"
             >
               <div className="px-6 py-6 flex flex-col gap-6">
               <Link
                 href="/building"
                 onClick={() => setIsOpen(false)}
-                className={`text-base hover:opacity-60 transition-opacity ${isDark ? 'text-white' : 'text-black'}`}
+                className="text-base text-black hover:opacity-60 transition-opacity"
               >
                 Building
               </Link>
               <Link
                 href="/work"
                 onClick={() => setIsOpen(false)}
-                className={`text-base hover:opacity-60 transition-opacity ${isDark ? 'text-white' : 'text-black'}`}
+                className="text-base text-black hover:opacity-60 transition-opacity"
               >
                 Projects
               </Link>
               <Link
                 href="/about"
                 onClick={() => setIsOpen(false)}
-                className={`text-base hover:opacity-60 transition-opacity ${isDark ? 'text-white' : 'text-black'}`}
+                className="text-base text-black hover:opacity-60 transition-opacity"
               >
                 About
               </Link>
               <Link
                 href="/contact"
                 onClick={() => setIsOpen(false)}
-                className={`text-base px-6 py-3 border rounded-md text-center transition-colors ${
-                  isDark
-                    ? 'border-white text-white hover:bg-white hover:text-black'
-                    : 'border-black text-black hover:bg-black hover:text-white'
-                }`}
+                className="text-base px-6 py-3 border border-black text-black rounded-md text-center hover:bg-black hover:text-white transition-colors"
               >
                 Contact
               </Link>

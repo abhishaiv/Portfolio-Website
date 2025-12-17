@@ -11,16 +11,16 @@ export default function BuildingPage() {
       <Navigation theme="light" />
 
       {/* Main Content */}
-      <main className="min-h-screen bg-black text-white pt-32">
-        <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-24">
+      <main className="min-h-screen bg-black text-white pt-32 pb-24">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12">
           {/* Header with Logo */}
           <motion.div
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className="flex items-center gap-4 mb-16"
+            className="flex items-center gap-4 mb-20"
           >
-            <div className="w-16 h-16 rounded-full bg-pink-400 flex items-center justify-center text-black text-2xl font-bold">
+            <div className="w-16 h-16 rounded-full bg-pink-400 flex items-center justify-center text-black text-2xl font-bold flex-shrink-0">
               N
             </div>
             <h1 className="text-4xl md:text-5xl font-medium">Nexaflow Studios</h1>
@@ -31,7 +31,7 @@ export default function BuildingPage() {
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="max-w-3xl space-y-6 mb-12"
+            className="max-w-3xl space-y-6 mb-20"
           >
             <p className="text-xl md:text-2xl leading-relaxed">
               We build AI systems that make teams faster, sharper, and 10x more effective.
@@ -49,7 +49,7 @@ export default function BuildingPage() {
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="max-w-3xl space-y-6 mb-12"
+            className="max-w-3xl space-y-6 mb-20"
           >
             <h2 className="text-2xl font-medium">Our philosophy</h2>
             <p className="text-lg leading-relaxed text-gray-300">

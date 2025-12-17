@@ -7,6 +7,10 @@ import { allProjects } from '@/lib/projects';
 import Navigation from '@/components/Navigation';
 
 export default function WorkPage() {
+  // Filter to show only 5 featured projects as per Figma
+  const featuredProjectSlugs = ['recall', 'tailr-ai', 'f1-pitwall', 'kathy', 'apartment-fix'];
+  const featuredProjects = allProjects.filter(p => p.slug && featuredProjectSlugs.includes(p.slug));
+
   return (
     <>
       <Navigation theme="light" />
@@ -35,7 +39,7 @@ export default function WorkPage() {
             </div>
 
             {/* Table Rows */}
-            {allProjects.map((project, index) => (
+            {featuredProjects.map((project, index) => (
               <motion.div
                 key={project.id}
                 initial={{ y: 20, opacity: 0 }}

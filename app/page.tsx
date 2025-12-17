@@ -67,7 +67,7 @@ export default function Home() {
           transition={{ delay: 1, duration: 1.1, ease: [0.6, 0.05, 0.01, 0.9] }}
           className="absolute bottom-12 md:bottom-16 left-6 md:left-12 z-10"
         >
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-light text-white leading-none">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-white leading-none">
             Abhishai Vardhan
           </h1>
         </motion.div>
