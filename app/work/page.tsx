@@ -90,61 +90,70 @@ export default function WorkPage() {
       </main>
 
       {/* Dark Footer */}
-      <footer className="bg-[#2b2b2b] text-white px-6 md:px-12 py-20">
+      <footer className="bg-[#2b2b2b] text-white px-16 py-[72px] relative">
         <div className="max-w-[1400px] mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+          {/* CTA Circle - Positioned absolutely for dominance */}
+          <Link href="/contact">
+            <motion.div
+              initial={{ scale: 0, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="absolute right-16 top-10 w-[140px] h-[140px] rounded-full bg-blue-500 flex items-center justify-center text-lg font-medium cursor-pointer hover:bg-blue-600 transition-colors shadow-xl z-10"
+            >
+              Get in touch
+            </motion.div>
+          </Link>
+
+          {/* Main content */}
+          <div className="mb-16 pr-40 md:pr-48">
             <motion.div
               initial={{ x: -40, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
-              className="flex items-center gap-6"
+              className="mb-12"
             >
-              <div className="relative w-20 h-20 rounded-full overflow-hidden flex-shrink-0">
-                <Image
-                  src="/images/portfolio/profile.jpg"
-                  alt="Abhishai Vardhan"
-                  fill
-                  className="object-cover"
-                  sizes="80px"
-                />
+              <div className="flex items-center gap-6 mb-8">
+                <div className="relative w-20 h-20 rounded-full overflow-hidden flex-shrink-0">
+                  <Image
+                    src="/images/portfolio/profile.jpg"
+                    alt="Abhishai Vardhan"
+                    fill
+                    className="object-cover"
+                    sizes="80px"
+                  />
+                </div>
               </div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-light">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight max-w-lg">
                 Let's build<br/>something cooler
               </h2>
             </motion.div>
 
+            {/* Contact info */}
             <motion.div
-              initial={{ x: 40, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
-              className="flex flex-col lg:items-end gap-6"
+              transition={{ delay: 0.2 }}
+              className="space-y-3"
             >
-              <div className="flex flex-wrap gap-4">
-                <a
-                  href="mailto:abhishaivardhan21@gmail.com"
-                  className="px-6 py-3 border border-white/20 rounded-full hover:bg-white/10 transition-colors"
-                >
-                  abhishaivardhan21@gmail.com
-                </a>
-                <a
-                  href="tel:+918919451220"
-                  className="px-6 py-3 border border-white/20 rounded-full hover:bg-white/10 transition-colors"
-                >
-                  +91 8919451220
-                </a>
-              </div>
-              <Link href="/contact">
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-48 h-48 rounded-full bg-blue-500 flex items-center justify-center text-xl cursor-pointer hover:bg-blue-600 transition-colors"
-                >
-                  Get in touch
-                </motion.div>
-              </Link>
+              <a
+                href="mailto:abhishaivardhan21@gmail.com"
+                className="block text-base text-gray-300 hover:text-white transition-colors"
+              >
+                abhishaivardhan21@gmail.com
+              </a>
+              <a
+                href="tel:+918919451220"
+                className="block text-base text-gray-300 hover:text-white transition-colors"
+              >
+                +91 8919451220
+              </a>
             </motion.div>
           </div>
 
+          {/* Socials */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}

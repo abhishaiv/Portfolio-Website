@@ -13,9 +13,9 @@ export default function Navigation({ theme = 'light' }: NavigationProps) {
 
   return (
     <nav className="fixed top-6 left-6 right-6 z-50">
-      <div className="max-w-[1400px] mx-auto bg-white/95 backdrop-blur-md rounded-2xl shadow-lg border border-gray-100">
-        <div className="px-6 md:px-12 py-6 flex justify-between items-center">
-          <Link href="/" className="text-base font-medium text-black">
+      <div className="max-w-[1400px] mx-auto bg-white backdrop-blur-md rounded-full shadow-lg">
+        <div className="px-8 py-5 flex justify-between items-center">
+          <Link href="/" className="text-base font-normal text-black">
             Build with Abhishai
           </Link>
 
@@ -23,25 +23,25 @@ export default function Navigation({ theme = 'light' }: NavigationProps) {
         <div className="hidden md:flex gap-8 items-center">
           <Link
             href="/building"
-            className="text-sm text-black hover:opacity-60 transition-opacity"
+            className="text-sm text-black opacity-80 hover:opacity-100 transition-opacity font-normal"
           >
             Building
           </Link>
           <Link
             href="/work"
-            className="text-sm text-black hover:opacity-60 transition-opacity"
+            className="text-sm text-black opacity-80 hover:opacity-100 transition-opacity font-normal"
           >
             Projects
           </Link>
           <Link
             href="/about"
-            className="text-sm text-black hover:opacity-60 transition-opacity"
+            className="text-sm text-black opacity-80 hover:opacity-100 transition-opacity font-normal"
           >
             About
           </Link>
           <Link
             href="/contact"
-            className="text-sm px-6 py-2 border border-black text-black rounded-md hover:bg-black hover:text-white transition-colors"
+            className="text-sm text-black opacity-80 hover:opacity-100 transition-opacity font-normal"
           >
             Contact
           </Link>
@@ -92,28 +92,28 @@ export default function Navigation({ theme = 'light' }: NavigationProps) {
               <Link
                 href="/building"
                 onClick={() => setIsOpen(false)}
-                className="text-base text-black hover:opacity-60 transition-opacity"
+                className="text-base text-black opacity-80 hover:opacity-100 transition-opacity font-normal"
               >
                 Building
               </Link>
               <Link
                 href="/work"
                 onClick={() => setIsOpen(false)}
-                className="text-base text-black hover:opacity-60 transition-opacity"
+                className="text-base text-black opacity-80 hover:opacity-100 transition-opacity font-normal"
               >
                 Projects
               </Link>
               <Link
                 href="/about"
                 onClick={() => setIsOpen(false)}
-                className="text-base text-black hover:opacity-60 transition-opacity"
+                className="text-base text-black opacity-80 hover:opacity-100 transition-opacity font-normal"
               >
                 About
               </Link>
               <Link
                 href="/contact"
                 onClick={() => setIsOpen(false)}
-                className="text-base px-6 py-3 border border-black text-black rounded-md text-center hover:bg-black hover:text-white transition-colors"
+                className="text-base text-black opacity-80 hover:opacity-100 transition-opacity font-normal"
               >
                 Contact
               </Link>

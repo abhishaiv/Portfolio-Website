@@ -21,8 +21,8 @@ export default function Home() {
           alt="Abhishai Vardhan - AI Builder"
           fill
           priority
-          className="object-cover object-center"
-          quality={95}
+          className="object-cover object-[60%_center]"
+          quality={100}
           sizes="100vw"
         />
 
@@ -65,9 +65,9 @@ export default function Home() {
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 1, duration: 1.1, ease: [0.6, 0.05, 0.01, 0.9] }}
-          className="absolute bottom-12 md:bottom-16 left-6 md:left-12 z-10"
+          className="absolute bottom-12 md:bottom-16 left-16 z-10"
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-white leading-none">
+          <h1 className="text-[56px] font-light text-white leading-none">
             Abhishai Vardhan
           </h1>
         </motion.div>
@@ -103,7 +103,7 @@ export default function Home() {
               transition={{ duration: 0.9 }}
               className="lg:col-span-7"
             >
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium leading-tight">
+              <h2 className="text-[40px] font-medium leading-[1.05] max-w-[720px]">
                 Building AI-fuelled systems that upgrade humans from 1 to <span className="text-red-600">10x</span>
               </h2>
             </motion.div>
@@ -117,13 +117,13 @@ export default function Home() {
               className="lg:col-span-5 space-y-8"
             >
               <p className="text-base leading-relaxed text-gray-600">
-                By day, I decode global markets. By night, I turn ideas into products that think on their own. I don't just engineer code, I engineer systems that remove incrementally smarter. No nonsense, always on the cutting edge.
+                By day, I decode global markets. By night, I turn ideas into products that think on their own. I don't just engineer code, I engineer systems that become incrementally smarter. No nonsense, always on the cutting edge.
               </p>
               <Link href="/about">
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="px-8 py-4 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
+                  className="px-4 py-2 bg-black text-white rounded-full hover:bg-gray-800 transition-colors font-medium"
                 >
                   About me
                 </motion.button>
@@ -155,9 +155,9 @@ export default function Home() {
                 >
                   <Link
                     href={`/work/${project.slug}`}
-                    className="block py-6 border-b border-gray-100 hover:bg-gray-50 transition-colors"
+                    className="block py-7 border-b border-gray-200 hover:opacity-70 transition-all"
                   >
-                    <h3 className="text-3xl md:text-4xl font-light">{project.title}</h3>
+                    <h3 className="text-[22px] font-light">{project.title}</h3>
                   </Link>
                 </motion.div>
               ))}
@@ -181,94 +181,102 @@ export default function Home() {
         </section>
 
         {/* Project Showcase Cards */}
-        <section className="py-24 px-6 md:px-12">
-          <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-            {featuredProjects.slice(0, 3).map((project, index) => (
-              <motion.div
-                key={project.id}
-                initial={{ y: 40, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: index * 0.1 }}
-              >
-                <Link href={`/work/${project.slug}`}>
-                  <div className="aspect-video bg-gray-900 rounded-lg overflow-hidden hover:scale-[1.02] transition-transform duration-300 relative">
-                    {project.image ? (
-                      <Image
-                        src={project.image}
-                        alt={project.title}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      />
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center text-white/40">
-                        Project Screenshot
-                      </div>
-                    )}
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
+        <section className="py-12 md:py-16 px-16 bg-[#f5f5f6]">
+          <div className="max-w-[1400px] mx-auto py-12 md:py-16">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {featuredProjects.slice(0, 3).map((project, index) => (
+                <motion.div
+                  key={project.id}
+                  initial={{ y: 40, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7, delay: index * 0.1 }}
+                >
+                  <Link href={`/work/${project.slug}`}>
+                    <div className="aspect-video bg-gray-900 rounded-xl overflow-hidden hover:scale-[1.02] transition-transform duration-300 relative shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
+                      {project.image ? (
+                        <Image
+                          src={project.image}
+                          alt={project.title}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center text-white/40">
+                          Project Screenshot
+                        </div>
+                      )}
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </section>
       </main>
 
       {/* Dark Footer */}
-      <footer className="bg-[#2b2b2b] text-white px-6 md:px-12 py-20">
+      <footer className="bg-[#2b2b2b] text-white px-16 py-[72px] relative">
         <div className="max-w-[1400px] mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-            {/* Left */}
+          {/* CTA Circle - Positioned absolutely for dominance */}
+          <Link href="/contact">
+            <motion.div
+              initial={{ scale: 0, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="absolute right-16 top-10 w-[140px] h-[140px] rounded-full bg-blue-500 flex items-center justify-center text-lg font-medium cursor-pointer hover:bg-blue-600 transition-colors shadow-xl z-10"
+            >
+              Get in touch
+            </motion.div>
+          </Link>
+
+          {/* Main content */}
+          <div className="mb-16 pr-40 md:pr-48">
             <motion.div
               initial={{ x: -40, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
-              className="flex items-center gap-6"
+              className="mb-12"
             >
-              <div className="relative w-20 h-20 rounded-full overflow-hidden flex-shrink-0">
-                <Image
-                  src="/images/portfolio/profile.jpg"
-                  alt="Abhishai Vardhan"
-                  fill
-                  className="object-cover"
-                  sizes="80px"
-                />
+              <div className="flex items-center gap-6 mb-8">
+                <div className="relative w-20 h-20 rounded-full overflow-hidden flex-shrink-0">
+                  <Image
+                    src="/images/portfolio/profile.jpg"
+                    alt="Abhishai Vardhan"
+                    fill
+                    className="object-cover"
+                    sizes="80px"
+                  />
+                </div>
               </div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-light">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight max-w-lg">
                 Let's build<br/>something cooler
               </h2>
             </motion.div>
 
-            {/* Right */}
+            {/* Contact info */}
             <motion.div
-              initial={{ x: 40, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
-              className="flex flex-col lg:items-end gap-6"
+              transition={{ delay: 0.2 }}
+              className="space-y-3"
             >
-              <div className="flex flex-wrap gap-4">
-                <a
-                  href="mailto:abhishaivardhan21@gmail.com"
-                  className="px-6 py-3 border border-white/20 rounded-full hover:bg-white/10 transition-colors"
-                >
-                  abhishaivardhan21@gmail.com
-                </a>
-                <a
-                  href="tel:+918919451220"
-                  className="px-6 py-3 border border-white/20 rounded-full hover:bg-white/10 transition-colors"
-                >
-                  +91 8919451220
-                </a>
-              </div>
-              <Link href="/contact">
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-48 h-48 rounded-full bg-blue-500 flex items-center justify-center text-xl cursor-pointer hover:bg-blue-600 transition-colors"
-                >
-                  Get in touch
-                </motion.div>
-              </Link>
+              <a
+                href="mailto:abhishaivardhan21@gmail.com"
+                className="block text-base text-gray-300 hover:text-white transition-colors"
+              >
+                abhishaivardhan21@gmail.com
+              </a>
+              <a
+                href="tel:+918919451220"
+                className="block text-base text-gray-300 hover:text-white transition-colors"
+              >
+                +91 8919451220
+              </a>
             </motion.div>
           </div>
 
